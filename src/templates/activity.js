@@ -47,10 +47,10 @@ export const query = graphql`
             hutirka_video_link
             materials
             submission_form
-            activity_type
+
             ulad
             vymohy
-            vymohy_help
+            # vymohy_help
           }
           cursor
         }

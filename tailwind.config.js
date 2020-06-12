@@ -1,16 +1,51 @@
+const { colors } = require("tailwindcss/defaultTheme")
+
 module.exports = {
   purge: ["./src/**/*.js"],
   theme: {
     extend: {},
     colors: {
-      colors: {
-        indigo: "#5c6ac4",
-        blue: "#007ace",
-        red: "#C63A2B",
-        gold: "#F9C824",
-      },
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      red: colors.red,
+      yellow: colors.yellow,
+      green: colors.green,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.purple,
+      teal: colors.teal,
+      orange: colors.orange,
+      pink: colors.pink,
+    },
+    fontFamily: {
+      sans: [
+        "Montserrat",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "Noto Sans",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji",
+      ],
+      alt: ["Rubik"],
+      display: ["Rubik Mono One"],
     },
   },
   variants: {},
   plugins: [],
 }
+
+// indigo: "#5163ba",
+// blue: "#007ace",
+// red: "#C63A2B",
+// gold: "#F9C824",
+// orange: "#f5a830",
+// // green: "#2da56a",
