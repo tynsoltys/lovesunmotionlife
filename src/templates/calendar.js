@@ -6,10 +6,10 @@ import Layout from "../components/layout"
 export default function CalendarPage({ data }) {
   const calendarPage = data.prismic.allCalendars.edges[0].node
   const { calendar_title, ulad } = calendarPage
+  console.log(`test`, ulad)
   return (
-    <Layout>
+    <Layout ulad={ulad}>
       <h1>{calendar_title[0].text}</h1>
-
       <p>
         We're the only site running on your computer dedicated to showing the
         best photos and videos of pandas eating lots of food.

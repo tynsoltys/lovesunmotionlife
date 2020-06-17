@@ -4,12 +4,24 @@ import Layout from "../components/layout"
 
 // data.prismic.allActivitys.edges[0].node
 
-export default function About({ data }) {
+export default function ActivityPage({ data }) {
   const activity = data.prismic.allActivitys.edges[0].node
-  const { activity_title, activity_type, activity_category } = activity
+  const {
+    activity_category,
+    activity_code,
+    activity_title,
+    activity_subtitle,
+    activity_description,
+    materials,
+    submission_form,
+    ulad,
+  } = activity
+  console.log(activity_title[0].text)
+  console.log(activity_subtitle[0].text)
+
   return (
-    <Layout>
-      <h1>{activity_title[0].text}</h1>
+    <Layout ulad={ulad}>
+      {/* <h1>{activity_title[0].text}</h1> */}
 
       <p>
         We're the only site running on your computer dedicated to showing the
@@ -20,39 +32,24 @@ export default function About({ data }) {
 }
 
 export const query = graphql`
-  query PageQuery($uid: String) {
+  query ActivityPageQuery($uid: String) {
     prismic {
       allActivitys(uid: $uid) {
         edges {
           node {
-            activity_title
-            _linkType
-            _meta {
-              id
-              lang
-              tags
-              type
-              uid
-            }
             activity_category
             activity_code
-            activity_description
             activity_subtitle
-            hutirka_docs {
-              hutirka_doc {
-                _linkType
-              }
+            activity_description
+            _linkType
+            _meta {
+              uid
             }
-            hutirka_intro
-            hutirka_video_link
             materials
             submission_form
-
+            activity_title
             ulad
-            vymohy
-            # vymohy_help
           }
-          cursor
         }
       }
     }

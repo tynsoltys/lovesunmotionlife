@@ -10,9 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 
-const Layout = ({ children, location, isHome }) => {
+const Layout = ({ children, isHome, ulad }) => {
   console.log("layoutreturn", children)
-  console.log(isHome)
+  console.log(`is home page`, isHome)
+  console.log(`ulad is`, ulad)
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +27,9 @@ const Layout = ({ children, location, isHome }) => {
 
   return (
     <div className="body-container h-screen">
-      {isHome ? null : <Header siteTitle={data.site.siteMetadata.title} />}
+      {isHome ? null : (
+        <Header siteTitle={data.site.siteMetadata.title} ulad={ulad} />
+      )}
       <div className="font-alt h-full">
         <main>{children}</main>
         <footer>
