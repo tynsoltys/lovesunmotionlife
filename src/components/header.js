@@ -7,28 +7,35 @@ import Logo from "../images/LSML_logo_svg.svg"
 const Header = ({ ulad }) => {
   function uladification(ulad) {
     const uladString = JSON.stringify(ulad)
-    console.log(uladString)
+    // console.log(uladString)
     if (uladString === "true") {
-      console.log(`This page is UPU`)
+      console.info(`ULAD IS UPU`)
       return `upu`
     } else {
-      console.log(`This page is UPN`)
+      console.info(`ULAD IS UPN`)
       return `upn`
     }
   }
 
   const uladURL = uladification(ulad)
-  console.log(uladURL)
+  // console.log(uladURL)
   return (
-    <header className="px-4 bg-green-600 shadow-lg flex justify-center items-center">
-      <Link to={`/tochky_${uladURL}`} className="text-3xl p-0 m-0 uppercase">
-        Точки
+    <header className="">
+      <Link
+        to={`/tochky_${uladURL}`}
+        className="left-skew bg-green-500 rounded-lg max-w-1/2"
+      >
+        Вимоги
       </Link>
-      <Link to="/">
-        <img src={Logo} alt="" className="py-0 m-2 mb-3" />
+      <Link to="/" className="logo">
+        <img src={Logo} alt="" className="" />
       </Link>
-      <Link to={`/prohrama_${uladURL}`} className="text-3xl p-0 m-0 uppercase">
-        Кaлєндaр
+
+      <Link
+        to={`/prohrama_${uladURL}`}
+        className="right-skew bg-green-500 rounded-lg max-w-1/2"
+      >
+        Зустріч
       </Link>
     </header>
   )

@@ -16,26 +16,28 @@ export default function IndexPage({ data }) {
 
   return (
     <Layout isHome="true">
-      <div className="homepage-container text-center flex flex-col justify-center bg-blue-900 content-center">
-        <div className="logo container w-2/3 mx-auto mb-12">
+      <div className="homepage-container text-center flex flex-col justify-center bg-green-700 content-center">
+        <div className="logo logo-container">
           <LogoFancy />
         </div>
         <div className="ulad-links-container flex flex-row content-center justify-center">
           <Link
-            className="btn text-5xl font-bold w-1/3 m-8 text-red-700  bg-yellow-500 hover:bg-yellow-400 p-8 rounded shadow-lg"
+            className="btn text-5xl font-bold w-1/4 m-8 text-red-600  bg-yellow-500 hover:bg-yellow-300 p-8 rounded shadow-lg"
             to="/tochky_upn"
           >
             УПН
           </Link>
           <Link
-            className="btn text-5xl font-bold w-1/3 m-8 text-yellow-500  bg-red-700 hover:bg-red-600 p-8 rounded shadow-lg"
+            className="btn text-5xl font-bold w-1/4 m-8 text-yellow-500  bg-red-600 hover:bg-red-500 p-8 rounded-lg shadow-lg"
             to="/tochky_upu"
           >
             УПЮ+
           </Link>
         </div>
-        <div className="">
-          <Link>?</Link>
+        <div className="mt-8">
+          <Link className="text-gray-200 text-4xl">
+            <FontAwesomeIcon icon={["fal", "question-circle"]} />
+          </Link>
         </div>
         <div>
           <Link></Link>

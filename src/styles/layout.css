@@ -1,5 +1,5 @@
 html {
-  @apply font-alt;
+  @apply font-sans;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -186,7 +186,8 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
+  font: 112.5%/1.45em serif;
+  @apply font-sans;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -201,7 +202,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  @apply font-sans;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -332,7 +333,7 @@ h5,
 h6,
 p,
 a {
-  @apply font-alt;
+  @apply font-sans;
 }
 hgroup {
   margin-left: 0;

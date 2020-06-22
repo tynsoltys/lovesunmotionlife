@@ -1,5 +1,41 @@
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  // padding: 1em;
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @apply bg-green-600;
+  @apply text-gray-200;
+  height: 70px;
+  a {
+    width: 25%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    // @apply bg-gray-700;
+    padding: 10px;
+    position: relative;
+    z-index: 100;
+  }
   .logo {
-    padding-bottom: 20px;
+    padding: 0em 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5000;
+
+    img {
+      // position: absolute;
+      // top: -24px;
+      max-width: 90px;
+      margin-bottom: 0;
+    }
   }
 }

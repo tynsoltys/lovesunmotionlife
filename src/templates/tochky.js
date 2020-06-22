@@ -6,29 +6,15 @@ import TochkaGrid from "../components/TochkaGrid"
 export default function TochkaPage({ data }) {
   const tochkaPage = data.prismic.allTochkys.edges[0].node
   const { tochky_title, ulad } = tochkaPage
-  console.log(`ULAD IS:`, ulad)
 
-  const allActivities = data.prismic.allActivitys.edges
-  // console.log(allActivities)
-
-  function allActivitysByUlad(activities, ulad) {
-    console.log(`HUH`, activities, ulad)
-    const activityList = activities.filter(i => {
-      const nodeUlad = JSON.stringify(i.node.ulad)
-      const pageUlad = JSON.stringify(ulad)
-      // console.log("TEST", nodeUlad, pageUlad)
-      return nodeUlad === pageUlad
-    })
-    return activityList
-  }
-
-  // console.log(allActivitysByUlad(allActivities, ulad))
+  const upnActivitys = data.prismic.upnActivitys
+  const upuActivitys = data.prismic.upuActivitys
 
   return (
     <Layout ulad={ulad}>
       <h1>{tochky_title[0].text}</h1>
       <TochkaGrid
-        tochky={allActivitysByUlad(allActivities, ulad)}
+        tochky={ulad == true ? upuActivitys : upnActivitys}
         ulad={ulad}
       />
     </Layout>
@@ -45,16 +31,12 @@ export const query = graphql`
             tochky_title
             _linkType
             _meta {
-              lang
-              alternateLanguages {
-                lang
-                uid
-              }
+              uid
             }
           }
         }
       }
-      allActivitys {
+      upnActivitys: allActivitys(where: { ulad: false }) {
         edges {
           node {
             ulad
@@ -67,6 +49,23 @@ export const query = graphql`
             activity_category
             activity_code
           }
+          cursor
+        }
+      }
+      upuActivitys: allActivitys(where: { ulad: true }) {
+        edges {
+          node {
+            ulad
+            activity_title
+            activity_subtitle
+            _linkType
+            _meta {
+              uid
+            }
+            activity_category
+            activity_code
+          }
+          cursor
         }
       }
     }

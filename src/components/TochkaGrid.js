@@ -1,41 +1,72 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
+import { Markup } from "interweave"
 
 const TochkaGrid = ({ ulad, tochky }) => {
-  console.log(ulad)
-  console.log(tochky)
+  // console.log(ulad)
+  // console.log(tochky)
 
   function liConstructor(tochkaCode) {
+    // console.log(`TOCHKA CODE`, tochkaCode)
     const tochkaUrl = `${uladification(ulad)}-${tochkaCode}`
-    const tochkaNode = tochky.filter(i => {
+    // console.log(tochkaUrl)
+    const tochkaNode = tochky.edges.filter(i => {
       return i.node._meta.uid === tochkaUrl
     })
+
     const {
       activity_category,
       activity_code,
       activity_title,
       activity_subtitle,
     } = tochkaNode[0].node
-    console.log(activity_title[0].text)
-    console.log(activity_subtitle[0].text)
+
+    console.log(activity_category)
+
+    function catTranslate(category) {
+      let categoryEn = ""
+      switch (category) {
+        case "Любимо":
+          categoryEn = "love"
+          break
+        case "Сонце":
+          categoryEn = "sun"
+          break
+        case "Рух":
+          categoryEn = "motion"
+          break
+        case "Життя":
+          categoryEn = "zife"
+          break
+        default:
+          categoryEn = "oops"
+      }
+      return categoryEn
+    }
+
     return `
-      <li className="tochka-item love ${tochkaCode}">
-        <Link
-          to="activity/${tochkaUrl}"
-          className=""
+      <li>
+        <a
+          href="activity/${tochkaUrl}"
+          class="${catTranslate(activity_category)} tochka-item ${
+      activity_subtitle[0].text
+    } ${tochkaCode}"
         >
-        <div className="activity_code">${activity_code[0].text.slice(
+        <div class="tochka-left">        <span class="activity_code">${activity_code[0].text.slice(
           0,
           2
-        )}</div>
-        <h3 className="activity_title">${activity_title[0].text}</h3>
-        <div className="activity_subtitle">${activity_title[0].text}</div>
-        </Link>
+        )}</span></div>
+        <div class="tochka-right">        <h3 class="activity_title">${
+          activity_title[0].text
+        }</h3>
+        <p class="activity_subtitle">${activity_subtitle[0].text}</p></div>
+
+        </a>
       </li>
     `
   }
 
-  console.log(liConstructor("s3"))
+  // console.log(liConstructor("s3"))
 
   function uladification(ulad) {
     const uladString = JSON.stringify(ulad)
@@ -47,74 +78,46 @@ const TochkaGrid = ({ ulad, tochky }) => {
   }
 
   const uladURL = uladification(ulad)
-  console.log(uladURL)
+  // console.log(uladURL)
 
   return (
     <>
-      <ul className="container nav border m-0">
+      <ul className="tochky-container nav m-0">
         <li className="love-list">
-          <ul>
-            {liConstructor("s1")}
-            {liConstructor("s2")}
-            {liConstructor("s3")}
-            {liConstructor("s4")}
-          </ul>
+          {/* <h2>Любимо</h2> */}
+          <section>
+            <Markup content={liConstructor("l1")} />
+            <Markup content={liConstructor("l2")} />
+            <Markup content={liConstructor("l3")} />
+            <Markup content={liConstructor("l4")} />
+          </section>
         </li>
         <li className="sun-list">
-          <ul>
-            {liConstructor("s1")}
-            {liConstructor("s2")}
-            {liConstructor("s3")}
-            {liConstructor("s4")}
-          </ul>
+          {/* <h2>Сонце</h2> */}
+          <section>
+            <Markup content={liConstructor("s1")} />
+            <Markup content={liConstructor("s2")} />
+            <Markup content={liConstructor("s3")} />
+            <Markup content={liConstructor("s4")} />
+          </section>
         </li>
         <li className="motion-list">
-          <ul>
-            <li className="tochka-item motion m1">
-              <Link to={`activity/${uladification(ulad)}-m1`} className="">
-                m1 + name
-              </Link>
-            </li>
-            <li className="tochka-item motion m2">
-              <Link to={`activity/${uladification(ulad)}-m2`} className="">
-                m2 + name
-              </Link>
-            </li>
-            <li className="tochka-item motion m3">
-              <Link to={`activity/${uladification(ulad)}-m3`} className="">
-                m3 + name
-              </Link>
-            </li>
-            <li className="tochka-item motion m4">
-              <Link to={`activity/${uladification(ulad)}-m4`} className="">
-                m4 + name
-              </Link>
-            </li>
-          </ul>
+          {/* <h2>Рух</h2> */}
+          <section>
+            <Markup content={liConstructor("r1")} />
+            <Markup content={liConstructor("r2")} />
+            <Markup content={liConstructor("r3")} />
+            <Markup content={liConstructor("r4")} />
+          </section>
         </li>
         <li className="zife-list">
-          <ul>
-            <li className="tochka-item zife z1">
-              <Link to={`activity/${uladification(ulad)}-z1`} className="">
-                z1 + name
-              </Link>
-            </li>
-            <li className="tochka-item zife z2">
-              <Link to={`activity/${uladification(ulad)}-z2`} className="">
-                z2 + name
-              </Link>
-            </li>
-            <li className="tochka-item zife z3">
-              <Link to={`activity/${uladification(ulad)}-z3`} className="">
-                z3 + name
-              </Link>
-            </li>
-            <li className="tochka-item zife z4">
-              <Link to={`activity/${uladification(ulad)}-z4`} className="">
-                z4 + name
-              </Link>
-            </li>
-          </ul>
+          {/* <h2>Життя</h2> */}
+          <section>
+            <Markup content={liConstructor("z1")} />
+            <Markup content={liConstructor("z2")} />
+            <Markup content={liConstructor("z3")} />
+            <Markup content={liConstructor("z4")} />
+          </section>
         </li>
       </ul>
     </>

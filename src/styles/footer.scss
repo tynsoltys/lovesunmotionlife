@@ -1,0 +1,12 @@
+footer {
+  text-align: center;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @apply font-sans;
+  @apply bg-gray-800;
+  @apply text-gray-200;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
