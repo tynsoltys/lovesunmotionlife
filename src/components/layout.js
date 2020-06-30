@@ -8,9 +8,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { StateContextConsumer } from "./stateContextWrapper"
 import Header from "./header"
+import { uladification } from "../utils/uladConverters"
 
-const Layout = ({ children, isHome, ulad }) => {
+const Layout = ({ children, ulad, pageType }) => {
   // console.log("layoutreturn", children)
   // console.log(`is home page`, isHome)
   // console.log(`ulad is`, ulad)
@@ -26,10 +28,21 @@ const Layout = ({ children, isHome, ulad }) => {
   const info = {}
 
   return (
-    <div className="body-container bg-gray-300 font-serif h-full">
-      {isHome ? null : (
-        <Header siteTitle={data.site.siteMetadata.title} ulad={ulad} />
+    // <StateContextConsumer>
+    <div
+      className={`body-container bg-gray-300 font-serif h-full ${pageType}-page`}
+    >
+      {pageType !== "homepage" ? (
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          uladName={uladification(ulad)}
+          pageType={pageType}
+          ulad={ulad}
+        />
+      ) : (
+        ""
       )}
+
       <div className="">
         <main className="">{children}</main>
         <footer>
@@ -38,6 +51,7 @@ const Layout = ({ children, isHome, ulad }) => {
         </footer>
       </div>
     </div>
+    // </StateContextConsumer>
   )
 }
 

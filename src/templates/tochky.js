@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import TochkaGrid from "../components/TochkaGrid"
+import { uladification } from "../utils/uladConverters"
 
 export default function TochkaPage({ data }) {
   const tochkaPage = data.prismic.allTochkys.edges[0].node
@@ -11,11 +12,10 @@ export default function TochkaPage({ data }) {
   const upuActivitys = data.prismic.upuActivitys
 
   return (
-    <Layout ulad={ulad}>
-      <h1>{tochky_title[0].text}</h1>
+    <Layout ulad={ulad} pageType="tochky">
       <TochkaGrid
         tochky={ulad == true ? upuActivitys : upnActivitys}
-        ulad={ulad}
+        ulad={uladification(ulad)}
       />
     </Layout>
   )

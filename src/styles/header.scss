@@ -1,27 +1,49 @@
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   // padding: 1em;
   z-index: 5000;
   position: fixed;
   top: 0;
   width: 100%;
-  @apply bg-green-600;
+  @apply bg-gray-700;
   @apply text-gray-200;
-  height: 70px;
+  @apply shadow-lg;
+  .link-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-link {
+    @apply px-4;
+  }
+  .faq-link {
+    @apply text-green-400;
+    transition: all 0.3s;
+    &:hover {
+      @apply text-gray-200;
+    }
+  }
   a {
-    width: 25%;
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
+    height: 100%;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
     // @apply bg-gray-700;
-    padding: 10px;
+    padding: 10px 20px;
     position: relative;
     z-index: 100;
+    &.current-page {
+      border-bottom: 8px solid rgba(255, 255, 255, 0.4);
+      color: white;
+    }
+    &:hover {
+      color: white;
+    }
   }
   .logo {
     padding: 0em 2em;
@@ -30,12 +52,48 @@ header {
     justify-content: center;
     position: relative;
     z-index: 5000;
-
     img {
       // position: absolute;
       // top: -24px;
-      max-width: 90px;
+      max-width: 80px;
       margin-bottom: 0;
+    }
+  }
+
+  .ulad-toggle {
+    padding: 0;
+    margin: 0;
+    a {
+      display: flex;
+      padding: 7px 20px;
+      flex-flow: row wrap;
+    }
+    .ulads {
+      flex: 1 0 auto;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .toggle-container {
+      flex: 1 0 auto;
+
+      border-radius: 27px;
+      height: 50px;
+      padding: 3px;
+      width: 27px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      margin-right: 10px;
+      .toggle-ball {
+        @apply bg-ronchi-400;
+        height: 19px;
+        width: 19px;
+        border-radius: 50%;
+        &.toggle-upu {
+          margin-top: 22px;
+          @apply bg-punch-400;
+        }
+      }
+    }
+    &:hover {
     }
   }
 }

@@ -1,24 +1,12 @@
-h1 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: normal;
-  text-align: center;
-  padding: 0;
-
-  padding-bottom: 20px;
-  line-height: 1.5em;
-  // @apply text-gray-200;
-  margin-bottom: 0;
-  border-bottom: 1px;
-}
 .tochky-container {
+  max-width: 1200px !important;
   @media (min-width: 768px) {
     display: flex;
     justify-content: center;
     margin: auto;
     flex-flow: row wrap;
     li {
-      width: 20%;
+      width: calc(25% - 10px);
       margin: 5px;
       section {
         a {

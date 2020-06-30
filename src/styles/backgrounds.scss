@@ -10,4 +10,5 @@
 
 .homepage-container {
   height: 100vh;
+  @include topo-bg;
 }

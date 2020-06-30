@@ -17,6 +17,9 @@
 .body-container {
   min-height: 100vh;
   padding-top: 100px;
+  &.homepage-page {
+    padding-top: 0;
+  }
 }
 
 .logo-container {

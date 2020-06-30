@@ -6,7 +6,9 @@ footer {
   @apply font-sans;
   @apply bg-gray-800;
   @apply text-gray-200;
-  position: absolute;
+  // position: absolute;
+  margin-top: 100px;
   bottom: 0;
   width: 100%;
+  @apply shadow-lg;
 }

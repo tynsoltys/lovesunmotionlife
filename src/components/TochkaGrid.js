@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import { Markup } from "interweave"
+import { uladification } from "../utils/uladConverters"
 
 const TochkaGrid = ({ ulad, tochky }) => {
   // console.log(ulad)
@@ -8,7 +9,7 @@ const TochkaGrid = ({ ulad, tochky }) => {
 
   function liConstructor(tochkaCode) {
     // console.log(`TOCHKA CODE`, tochkaCode)
-    const tochkaUrl = `${uladification(ulad)}-${tochkaCode}`
+    const tochkaUrl = `${ulad}-${tochkaCode}`
     // console.log(tochkaUrl)
     const tochkaNode = tochky.edges.filter(i => {
       return i.node._meta.uid === tochkaUrl
@@ -48,9 +49,8 @@ const TochkaGrid = ({ ulad, tochky }) => {
       <li>
         <a
           href="activity/${tochkaUrl}"
-          class="${catTranslate(activity_category)} tochka-item ${
-      activity_subtitle[0].text
-    } ${tochkaCode}"
+          class="${catTranslate(activity_category)} tochka-item 
+    ${catTranslate(activity_category)}-item ${tochkaCode}"
         >
         <div class="tochka-left">        <span class="activity_code">${activity_code[0].text.slice(
           0,

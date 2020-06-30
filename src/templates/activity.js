@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import { Link, RichText, Date } from "prismic-reactjs"
 import { Markup } from "interweave"
 import { linkResolver } from "gatsby-source-prismic-graphql"
+import { uladification } from "../utils/uladConverters"
 
 // data.prismic.allActivitys.edges[0].node
 
@@ -21,6 +22,7 @@ export default function ActivityPage({ data }) {
     helpful_links,
     submission_form,
     ulad,
+    znymka,
   } = activity
   console.log(activity)
 
@@ -53,48 +55,75 @@ export default function ActivityPage({ data }) {
       return `<li>${i.text}</li>`
     })
 
-  // console.log(materialsList)
-
-  // console.log(helpful_links)
-
   const linksArray = () =>
     helpful_links.map(i => {
       console.log(i)
       const { helpful_link_title, helpful_link_description, helpful_link } = i
-      console.log(helpful_link_title[0].text)
-      return `<li><a href="${helpful_link.url}" target="_blank">${helpful_link_title[0].text}</a></li>`
+      // console.log(helpful_link_title[0].text)
+      return `<li><a href="${
+        helpful_links && helpful_link.url
+      }" target="_blank">${
+        helpful_link_title[0].text && helpful_link_title[0].text
+      }</a></li>`
     })
   const linksList = () => linksArray().join("")
 
   return (
-    <Layout ulad={ulad}>
+    <Layout ulad={ulad} pageType="activity">
       <div
-        className={`activity-page font-sans h-full ${catTranslate(
+        className={`font-sans h-full ${catTranslate(
           activity_category
-        )}-activity`}
+        )}-activity activity-container`}
       >
-        <h1>
-          {" "}
-          <span className="activity_code">
-            {activity_code[0].text.slice(0, 2)}
-          </span>{" "}
-          {activity_title[0].text}
-        </h1>
-        <h3 className="activity_subtitle">{activity_subtitle[0].text}</h3>{" "}
-        <hr />
-        <section className="description">
-          <p>{activity_description[0].text}</p>
-          <hr />
+        <div className="top-section flex">
+          <section className="intro">
+            <div className="intro-text">
+              <h1>
+                {" "}
+                <span className="activity_code">
+                  {activity_code[0].text.slice(0, 2)}
+                </span>{" "}
+                {activity_title[0].text}
+              </h1>
+              <h3 className="activity_subtitle">{activity_subtitle[0].text}</h3>{" "}
+              <hr />
+              <p>{activity_description[0].text}</p>
+            </div>
+            <div className="znymka-container">
+              <img src={znymka.url} alt={znymka.alt} />
+            </div>
+          </section>
+        </div>
+
+        <div className="middle-section">
+          <section className="materials ">
+            <h3>Мaтеріяли</h3>
+            {materials === !null && RichText.render(materials)}
+          </section>
+
+          <section className="examples">
+            <h3>Приклaди і Порaди</h3>
+            {RichText.render(pryklady)}
+          </section>
+        </div>
+
+        <section className="resources">
+          <h3>Резурси</h3>
+          {console.log(linksList())}
+          {helpful_links ? (
+            <Markup containerTagName={`ul`} content={linksList()} />
+          ) : (
+            ""
+          )}
         </section>
-        {materials === !null && <hr />}
-        {materials === !null && <h4>Мaтеріяли</h4>}
-        {materials === !null && RichText.render(materials)}
-        {pryklady === !null && <hr />}
-        {pryklady === !null && <h4>Приклaди</h4>}
-        {pryklady === !null && RichText.render(pryklady)}
-        {helpful_links === !null && <hr />}
-        {helpful_links === !null && <h4>Додaткові Резурси</h4>}
-        <Markup containerTagName="ul" content={linksList()} />
+        <hr class="major-hr" />
+        {submission_form ? (
+          <section className="submission form-section">
+            <h3>Зaвершення</h3>
+          </section>
+        ) : (
+          ""
+        )}
       </div>
     </Layout>
   )
@@ -134,6 +163,7 @@ export const query = graphql`
               helpful_link_description
               helpful_link_title
             }
+            znymka
           }
         }
       }

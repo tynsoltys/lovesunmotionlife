@@ -8,7 +8,7 @@ export default function CalendarPage({ data }) {
   const { calendar_title, ulad } = calendarPage
   console.log(`test`, ulad)
   return (
-    <Layout ulad={ulad}>
+    <Layout ulad={ulad} pageType="calendar">
       <h1>{calendar_title[0].text}</h1>
       <p>
         We're the only site running on your computer dedicated to showing the

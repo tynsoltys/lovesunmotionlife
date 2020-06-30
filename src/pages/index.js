@@ -15,8 +15,8 @@ export default function IndexPage({ data }) {
   const homepage = data.prismic.allHomepages.edges[0].node
 
   return (
-    <Layout isHome="true">
-      <div className="homepage-container text-center flex flex-col justify-center bg-green-700 content-center">
+    <Layout pageType="homepage">
+      <div className="homepage-container text-center flex flex-col justify-center content-center">
         <div className="logo logo-container">
           <LogoFancy />
         </div>
