@@ -9,7 +9,11 @@ import { uladification } from "../utils/uladConverters"
 // data.prismic.allActivitys.edges[0].node
 
 export default function ActivityPage({ data }) {
-  const activity = data.prismic.allActivitys.edges[0].node
+  const prismicContent = data.prismic.allActivitys.edges[0]
+  if (!prismicContent) {
+    return null
+  }
+  const activity = prismicContent.node
   console.log(data)
   const {
     activity_category,
@@ -139,7 +143,9 @@ export default function ActivityPage({ data }) {
               <h3>Зaвершення</h3>
               <div className="info">
                 <p>Для цієї точки, прошу здaти долучену форму зaвершення</p>
-                <Link to={submission_form.url}>Формa Зaвершення</Link>
+                <a href={submission_form.url} target="_blank">
+                  Формa Зaвершення
+                </a>
               </div>
             </section>
           </div>

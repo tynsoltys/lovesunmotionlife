@@ -61,8 +61,7 @@ module.exports = {
         defaultLang: "en-ca",
         langs: ["ua-ua", "en-ca"],
         accessToken: `MC5YdUU3cGhJQUFGYk5ZWFdv.R--_vQ5177-9YO-_ve-_vQ43SmDvv73vv73vv71WUO-_ve-_vT3vv73vv71F77-977-977-977-9BFIHR--_vQ`, // (optional API access token)
-        path: "/preview", // (optional preview path. Default: /preview)
-        previews: true, // (optional, activated Previews. Default: false)
+        previews: false, // (optional, activated Previews. Default: false)
         pages: [
           {
             // (optional, builds pages dynamically)

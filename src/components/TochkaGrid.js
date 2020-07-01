@@ -48,7 +48,7 @@ const TochkaGrid = ({ ulad, tochky }) => {
     return `
       <li>
         <a
-          href="activity/${tochkaUrl}"
+          href="../activity/${tochkaUrl}"
           class="${catTranslate(activity_category)} tochka-item 
     ${catTranslate(activity_category)}-item ${tochkaCode}"
         >

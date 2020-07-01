@@ -5,7 +5,11 @@ import TochkaGrid from "../components/TochkaGrid"
 import { uladification } from "../utils/uladConverters"
 
 export default function TochkaPage({ data }) {
-  const tochkaPage = data.prismic.allTochkys.edges[0].node
+  const prismicContent = data.prismic.allTochkys.edges[0]
+  if (!prismicContent) {
+    return null
+  }
+  const tochkaPage = prismicContent.node
   const { tochky_title, ulad } = tochkaPage
 
   const upnActivitys = data.prismic.upnActivitys
