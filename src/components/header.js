@@ -1,11 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import Image from "../components/image"
 import React from "react"
 import Logo from "../images/LSML_logo_svg.svg"
 import { uladification, ukrainification } from "../utils/uladConverters"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "../utils/fontawesome"
 
 const Header = ({ ulad, pageType, uladName }) => {
   console.log(`huhuhuh`, uladName)
@@ -28,7 +25,7 @@ const Header = ({ ulad, pageType, uladName }) => {
           </div>
         ) : (
           <Link to={`/tochky_${uladName}`} className={`text-2xl`}>
-            <FontAwesomeIcon icon={["fal", "arrow-circle-left"]} />
+            {/* <FontAwesomeIcon icon={["fal", "arrow-circle-left"]} /> */}⬅
           </Link>
         )}
 
@@ -42,7 +39,7 @@ const Header = ({ ulad, pageType, uladName }) => {
                 : null
             }`}
           >
-            <FontAwesomeIcon icon={["fal", "th"]} className="mr-1" />
+            {/* <FontAwesomeIcon icon={["fal", "th"]} className="mr-1" /> */}
 
             <span> Вимоги {ukrainification(ulad)}</span>
           </Link>
@@ -61,14 +58,14 @@ const Header = ({ ulad, pageType, uladName }) => {
               pageType === "calendar" ? `current-page` : null
             }`}
           >
-            <FontAwesomeIcon icon={["fal", "calendar-alt"]} className="mr-1" />
+            {/* <FontAwesomeIcon icon={["fal", "calendar-alt"]} className="mr-1" /> */}
             <span> Зустріч {ukrainification(ulad)}</span>
           </Link>
         </div>
         <div className="header-link faq-link ">
           {" "}
           <Link to={`/faq`} className="text-3xl">
-            <FontAwesomeIcon icon={["fal", "question-circle"]} />
+            ?
           </Link>
         </div>
       </div>

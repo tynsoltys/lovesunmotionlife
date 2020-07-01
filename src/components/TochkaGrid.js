@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { Markup } from "interweave"
-import { uladification } from "../utils/uladConverters"
 
 const TochkaGrid = ({ ulad, tochky }) => {
   // console.log(ulad)

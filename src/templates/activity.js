@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Link, RichText, Date } from "prismic-reactjs"
 import { Markup } from "interweave"
-import { linkResolver } from "gatsby-source-prismic-graphql"
-import { uladification } from "../utils/uladConverters"
+// import { linkResolver } from "gatsby-source-prismic-graphql"
+// import { uladification } from "../utils/uladConverters"
 
 // data.prismic.allActivitys.edges[0].node
 

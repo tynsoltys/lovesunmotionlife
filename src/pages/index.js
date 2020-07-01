@@ -1,13 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { linkResolver } from "../utils/linkResolver"
+// import { linkResolver } from "../utils/linkResolver"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 import LogoFancy from "../components/LogoFancy"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "../utils/fontawesome"
 
 export default function IndexPage({ data }) {
   console.log(data)
@@ -34,9 +30,7 @@ export default function IndexPage({ data }) {
           </Link>
         </div>
         <div className="mt-8">
-          <Link className="text-gray-200 text-4xl">
-            <FontAwesomeIcon icon={["fal", "question-circle"]} />
-          </Link>
+          <Link className="text-gray-200 text-4xl">?</Link>
         </div>
         <div>
           <Link></Link>
