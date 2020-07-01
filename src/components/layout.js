@@ -29,9 +29,7 @@ const Layout = ({ children, ulad, pageType }) => {
 
   return (
     // <StateContextConsumer>
-    <div
-      className={`body-container bg-gray-300 font-serif h-full ${pageType}-page`}
-    >
+    <div className={`body-container bg-gray-300 font-serif ${pageType}-page`}>
       {pageType !== "homepage" ? (
         <Header
           siteTitle={data.site.siteMetadata.title}
@@ -45,11 +43,11 @@ const Layout = ({ children, ulad, pageType }) => {
 
       <div className="">
         <main className="">{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Plast Canada.
-          {` `}
-        </footer>
       </div>
+      <footer>
+        © {new Date().getFullYear()}, Plast Canada.
+        {` `}
+      </footer>
     </div>
     // </StateContextConsumer>
   )

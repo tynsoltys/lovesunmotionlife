@@ -1,12 +1,15 @@
 header {
-  // padding: 1em;
   z-index: 5000;
   position: fixed;
   top: 0;
   width: 100%;
+  height: 72px;
   @apply bg-gray-700;
   @apply text-gray-200;
   @apply shadow-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .link-container {
     max-width: 1200px;
     width: 100%;
@@ -15,67 +18,91 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    // border: 1px solid green;
   }
   .header-link {
-    @apply px-4;
-  }
-  .faq-link {
-    @apply text-green-400;
-    transition: all 0.3s;
-    &:hover {
-      @apply text-gray-200;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    a {
+      text-align: center;
     }
   }
+
   a {
+    // border: 1px solid red;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
     height: 100%;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
-    // @apply bg-gray-700;
+    @apply rounded-lg;
     padding: 10px 20px;
     position: relative;
     z-index: 100;
     &.current-page {
-      border-bottom: 8px solid rgba(255, 255, 255, 0.4);
       color: white;
-    }
-    &:hover {
-      color: white;
+      @apply bg-gray-600;
+
+      @apply px-4;
     }
   }
-  .logo {
-    padding: 0em 2em;
-    text-align: center;
+
+  .logo-link {
     display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 5000;
+    align-items: center;
+    width: 10%;
+    padding: 0;
+    a {
+      width: 100%;
+      padding: 0;
+    }
     img {
-      // position: absolute;
-      // top: -24px;
+      width: 100%;
+      text-align: center;
+      margin: auto;
       max-width: 80px;
       margin-bottom: 0;
     }
   }
 
+  .calendar-link a:hover,
+  .tochky-link a:hover {
+    color: white;
+    @apply bg-gray-500;
+    @apply rounded-lg;
+    @apply px-4;
+  }
+
+  .faq-link {
+    @apply text-green-400;
+    padding-right: 0;
+    a {
+    }
+    transition: all 0.3s;
+    &:hover {
+      @apply text-gray-200;
+    }
+    text-align: right;
+  }
+
   .ulad-toggle {
     padding: 0;
     margin: 0;
+
     a {
       display: flex;
-      padding: 7px 20px;
+
       flex-flow: row wrap;
     }
     .ulads {
       flex: 1 0 auto;
       text-align: left;
       color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8em;
     }
     .toggle-container {
-      flex: 1 0 auto;
-
       border-radius: 27px;
       height: 50px;
       padding: 3px;
@@ -83,17 +110,28 @@ header {
       border: 1px solid rgba(255, 255, 255, 0.4);
       margin-right: 10px;
       .toggle-ball {
-        @apply bg-ronchi-400;
+        @apply bg-ronchi-500;
         height: 19px;
         width: 19px;
         border-radius: 50%;
         &.toggle-upu {
           margin-top: 22px;
-          @apply bg-punch-400;
+          @apply bg-punch-500;
         }
       }
     }
     &:hover {
     }
+  }
+  .ulad-toggle,
+  .faq-link {
+    width: 12%;
+  }
+  .tochky-link,
+  .calendar-link {
+    width: 30%;
+  }
+  @media (max-width: 1050px) {
+    font-size: 0.7em;
   }
 }

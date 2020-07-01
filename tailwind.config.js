@@ -4,6 +4,21 @@ module.exports = {
   purge: ["./src/**/*.js"],
   theme: {
     extend: {},
+    screens: {
+      xl: { max: "1200px" },
+      // => @media (max-width: 1279px) { ... }
+
+      lg: { max: "1050px" },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: "800px" },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: "650px" },
+      // => @media (max-width: 639px) { ... }
+      xs: { max: "400px" },
+      // => @media (max-width: 639px) { ... }
+    },
     colors: {
       black: colors.black,
       white: colors.white,

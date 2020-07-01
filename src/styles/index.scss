@@ -9,6 +9,7 @@
 @import "footer";
 @import "tochky";
 @import "activity";
+@import "calendar";
 
 // .body-container {
 //   height: 100vh;
@@ -19,6 +20,11 @@
   padding-top: 100px;
   &.homepage-page {
     padding-top: 0;
+  }
+  @include topo-bg-gray;
+  background-attachment: fixed;
+  main {
+    min-height: calc(100vh - 172px - 46px);
   }
 }
 

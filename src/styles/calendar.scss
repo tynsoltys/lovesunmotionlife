@@ -1,0 +1,84 @@
+.calendar-placeholder,
+.calendar-container {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1200px;
+  margin: auto;
+  div.day-container {
+    width: 15%;
+    flex: 1 0 auto;
+    margin: 10px;
+    @apply p-2;
+    @apply pt-4;
+    @apply rounded-lg;
+    @apply shadow-lg;
+    @apply bg-gray-100;
+    border-bottom: 6px solid rgba(0, 0, 0, 0.3);
+    &.today {
+      width: 20%;
+      @apply border-orange-600;
+      h3 {
+        @apply text-orange-600;
+      }
+    }
+  }
+  h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    @apply px-2;
+    @apply py-1;
+    .oho {
+      font-size: 0.5em;
+    }
+  }
+  .a,
+  .b,
+  .c {
+    margin: 10px;
+    @apply rounded-lg;
+    @apply shadow-lg;
+    @apply p-2;
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    min-height: 100px;
+    p {
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+  .a {
+    @apply bg-teal-100;
+    @apply border-teal-600;
+  }
+  .b {
+    @apply bg-indigo-100;
+    @apply border-indigo-600;
+  }
+  .c {
+    @apply bg-punch-100;
+    @apply border-punch-600;
+  }
+  .day-container.day-24,
+  .day-container.day-25 {
+    flex: 1 0 300px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      width: 100%;
+    }
+    div {
+      display: inline-block;
+      flex: 1 0 auto;
+    }
+  }
+}

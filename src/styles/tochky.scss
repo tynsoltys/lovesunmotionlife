@@ -46,6 +46,12 @@
               display: inline-block;
             }
           }
+          @media (max-width: 1050px) {
+            @apply p-2;
+            h3 {
+              font-size: 1em;
+            }
+          }
         }
         > div {
           margin-bottom: 10px;

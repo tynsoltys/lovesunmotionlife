@@ -1,11 +1,13 @@
 .love-activity {
   // @apply bg-red-500;
   .tochka-item,
-  .submission {
+  .submission .info {
     @apply border-punch-600;
     @apply bg-punch-100;
   }
-
+  .major-hr {
+    @apply border-punch-600;
+  }
   // @apply text-red-500;
   .activity_code,
   .resources li {
@@ -19,11 +21,13 @@
 }
 .sun-activity {
   .tochka-item,
-  .submission {
+  .submission .info {
     @apply border-ronchi-600;
     @apply bg-ronchi-100;
   }
-
+  .major-hr {
+    @apply border-ronchi-600;
+  }
   .activity_code,
   .resources li {
     @apply bg-ronchi-500;
@@ -36,11 +40,13 @@
 }
 .motion-activity {
   .tochka-item,
-  .submission {
+  .submission .info {
     @apply border-zelene-600;
     @apply bg-zelene-100;
   }
-
+  .major-hr {
+    @apply border-zelene-600;
+  }
   .activity_code,
   .resources li {
     @apply bg-zelene-500;
@@ -53,11 +59,13 @@
 }
 .zife-activity {
   .tochka-item,
-  .submission {
+  .submission .info {
     @apply border-syne-600;
     @apply bg-syne-100;
   }
-
+  .major-hr {
+    @apply border-syne-600;
+  }
   .activity_code,
   .resources li {
     @apply bg-syne-500;
@@ -120,6 +128,12 @@
   }
   section.materials {
     width: 30%;
+    ul {
+      list-style-type: disc;
+    }
+    li {
+      font-style: italic;
+    }
   }
   section.examples {
     flex: 1 0 auto;
@@ -162,4 +176,9 @@ section.submission {
   height: 0px;
   margin-top: 50px;
   border-top: 5px dashed red;
+}
+
+.info {
+  @apply p-4;
+  @apply rounded-lg;
 }

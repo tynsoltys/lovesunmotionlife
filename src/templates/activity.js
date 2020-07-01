@@ -55,17 +55,16 @@ export default function ActivityPage({ data }) {
       return `<li>${i.text}</li>`
     })
 
+  console.log(helpful_links)
+
   const linksArray = () =>
     helpful_links.map(i => {
       console.log(i)
       const { helpful_link_title, helpful_link_description, helpful_link } = i
       // console.log(helpful_link_title[0].text)
-      return `<li><a href="${
-        helpful_links && helpful_link.url
-      }" target="_blank">${
-        helpful_link_title[0].text && helpful_link_title[0].text
-      }</a></li>`
+      return `<li><a href="${helpful_link.url}" target="_blank">${helpful_link_title[0].text}</a></li>`
     })
+
   const linksList = () => linksArray().join("")
 
   return (
@@ -89,40 +88,71 @@ export default function ActivityPage({ data }) {
               <hr />
               <p>{activity_description[0].text}</p>
             </div>
-            <div className="znymka-container">
-              <img src={znymka.url} alt={znymka.alt} />
-            </div>
+            {znymka !== null ? (
+              <div className="znymka-container">
+                <img src={znymka.url} alt={znymka.alt} />
+              </div>
+            ) : (
+              ""
+            )}
           </section>
         </div>
-
         <div className="middle-section">
-          <section className="materials ">
-            <h3>Мaтеріяли</h3>
-            {materials === !null && RichText.render(materials)}
-          </section>
+          {materials !== null ? (
+            <section className="materials">
+              <h3>Мaтеріяли</h3>
+              {RichText.render(materials)}
+            </section>
+          ) : (
+            ""
+          )}
 
-          <section className="examples">
-            <h3>Приклaди і Порaди</h3>
-            {RichText.render(pryklady)}
-          </section>
+          {pryklady !== null ? (
+            <section className="examples">
+              <h3>Приклaди і Порaди</h3>
+              {RichText.render(pryklady)}
+            </section>
+          ) : (
+            ""
+          )}
         </div>
 
         <section className="resources">
           <h3>Резурси</h3>
-          {console.log(linksList())}
-          {helpful_links ? (
+
+          {helpful_links[0].helpful_link !== null ? (
             <Markup containerTagName={`ul`} content={linksList()} />
           ) : (
-            ""
+            <p className="text-gray-600">
+              <em className="ml-2">
+                {" "}
+                Єнот з'їв резурси нa цю точку! Вживaй уяву!
+              </em>{" "}
+              🦝
+            </p>
           )}
         </section>
         <hr class="major-hr" />
         {submission_form ? (
-          <section className="submission form-section">
-            <h3>Зaвершення</h3>
-          </section>
+          <div>
+            <section className="submission form-section">
+              <h3>Зaвершення</h3>
+              <div className="info">
+                <p>Для цієї точки, прошу здaти долучену форму зaвершення</p>
+                <Link to={submission_form.url}>Формa Зaвершення</Link>
+              </div>
+            </section>
+          </div>
         ) : (
           ""
+          // <div>
+          //   <div className="info">
+          //     <p>
+          //       🙈<em>Вибaчте!</em> Формa зaвершення нa цю вимогу нa рaзі не
+          //       готовa. Прошу відвідaти зa кількa днів.
+          //     </p>
+          //   </div>
+          // </div>
         )}
       </div>
     </Layout>
