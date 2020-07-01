@@ -7,7 +7,6 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import LogoFancy from "../components/LogoFancy"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-
 import "../utils/fontawesome"
 
 export default function IndexPage({ data }) {
