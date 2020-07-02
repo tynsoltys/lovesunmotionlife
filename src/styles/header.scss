@@ -13,12 +13,12 @@ header {
   .link-container {
     max-width: 1200px;
     width: 100%;
-    margin: auto;
+    height: 100%;
+    margin: 0px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    // border: 1px solid green;
   }
   .header-link {
     text-align: center;
@@ -34,20 +34,21 @@ header {
   a {
     // border: 1px solid red;
     text-align: center;
-    @apply text-gray-300;
+    @apply text-gray-400;
     height: 100%;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 500;
-    @apply rounded-lg;
-    padding: 10px 20px;
+    font-weight: 400;
     position: relative;
     z-index: 100;
+    display: flex;
+    align-items: center;
     &.current-page {
       color: white;
-      @apply bg-gray-600;
-
       @apply px-4;
+      .icon-color {
+        opacity: 1;
+      }
     }
     @media (max-width: 800px) {
       font-size: 0.8em;
@@ -55,8 +56,6 @@ header {
   }
 
   .logo-link {
-    display: flex;
-    align-items: center;
     width: 10%;
     padding: 0;
     a {
@@ -78,9 +77,9 @@ header {
   .calendar-link a:hover,
   .tochky-link a:hover {
     color: white;
-    @apply bg-gray-500;
-    @apply rounded-lg;
-    @apply px-4;
+    .icon-color {
+      opacity: 1;
+    }
   }
 
   .ulad-toggle {
@@ -144,6 +143,12 @@ header {
           display: none;
         }
       }
+    }
+    .icon-container {
+      margin-right: 10px;
+    }
+    &:hover .icon-color {
+      opacity: 1;
     }
   }
 }

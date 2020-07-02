@@ -1,0 +1,43 @@
+.icon-container {
+  // border: 1px solid red;
+
+  display: inline-block;
+  svg {
+    width: 0.8em;
+    height: 0.8em;
+  }
+  .icon-color {
+    opacity: 0;
+    transition: all 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.icon-question {
+  transition: all 0.5s;
+  rect {
+    fill: rgba(255, 255, 255, 0);
+  }
+  &:hover {
+    rect {
+      fill: #2da56a;
+    }
+  }
+}
+
+.icon-back-arrow {
+  transition: all 0.5s;
+  stroke: rect {
+    fill: rgba(255, 255, 255, 0);
+    stroke: #e2e8f0;
+  }
+  &:hover {
+    rect {
+      fill: #2a4fb4;
+      stroke: #e2e8f0;
+    }
+    color: #e2e8f0;
+  }
+}

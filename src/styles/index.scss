@@ -5,6 +5,7 @@
 @import "vars";
 @import "layout";
 @import "backgrounds";
+@import "icons";
 @import "header";
 @import "footer";
 @import "tochky";
@@ -19,7 +20,9 @@
   min-height: 100vh;
   padding-top: 100px;
   &.homepage-page {
+    @include topo-bg;
     padding-top: 0;
+    margin-top: 0;
   }
   @include topo-bg-gray;
   background-attachment: fixed;

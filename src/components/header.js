@@ -3,16 +3,14 @@ import PropTypes from "prop-types"
 import React from "react"
 import Logo from "../images/LSML_logo_svg.svg"
 import { uladification, ukrainification } from "../utils/uladConverters"
-import {
-  faQuestionCircle,
-  faCalendarAlt,
-  faTh,
-  faArrowCircleLeft,
-} from "../icons/js/light"
+import IconQuestion from "../components/icons/IconQuestion"
+import IconGrid from "../components/icons/IconGrid"
+import IconBackArrow from "../components/icons/IconBackArrow"
+import IconCalendar from "../components/icons/IconCalendar"
 
 const Header = ({ ulad, pageType, uladName }) => {
   console.log(`huhuhuh`, uladName)
-  console.log(faQuestionCircle)
+
   return (
     <header className="">
       <div className="link-container">
@@ -32,8 +30,7 @@ const Header = ({ ulad, pageType, uladName }) => {
           </div>
         ) : (
           <Link to={`/tochky_${uladName}`} className={`back-arrow text-2xl`}>
-            <i className="fal fa-arrow-circle-left"></i>
-            {/* <FontAwesomeIcon icon={["fal", "arrow-circle-left"]} /> */}⬅
+            <IconBackArrow />
           </Link>
         )}
 
@@ -48,7 +45,7 @@ const Header = ({ ulad, pageType, uladName }) => {
             }`}
           >
             {/* <FontAwesomeIcon icon={["fal", "th"]} className="mr-1" /> */}
-            <i className="fal fa-question-circle"></i>
+            <IconGrid color="false" className="mr-2" />
             Вимоги <span> {ukrainification(ulad)}</span>
           </Link>
         </div>
@@ -67,14 +64,14 @@ const Header = ({ ulad, pageType, uladName }) => {
             }`}
           >
             {/* <FontAwesomeIcon icon={["fal", "calendar-alt"]} className="mr-1" /> */}
-            <i className="fal fa-question-circle"></i>
+            <IconCalendar />
             Зустріч <span> {ukrainification(ulad)}</span>
           </Link>
         </div>
         <div className="header-link faq-link ">
           {" "}
           <Link to={`/faq`} className="text-2xl">
-            ?<i className="fal fa-question-circle"></i>
+            <IconQuestion color="false" />
           </Link>
         </div>
       </div>

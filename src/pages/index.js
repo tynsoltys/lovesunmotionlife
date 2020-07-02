@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { faQuestionCircle } from "../icons/js/light"
-// import { linkResolver } from "../utils/linkResolver"
+import IconQuestion from "../components/icons/IconQuestion"
 
 import Layout from "../components/layout"
 import LogoFancy from "../components/LogoFancy"
@@ -32,7 +31,7 @@ export default function IndexPage({ data }) {
         </div>
         <div className="mt-8">
           <Link className="faq-link text-3xl text-gray-200" to="/faq">
-            ?
+            <IconQuestion color="false" />
           </Link>
         </div>
       </div>
