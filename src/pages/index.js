@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { faQuestionCircle } from "../icons/js/light"
 // import { linkResolver } from "../utils/linkResolver"
 
 import Layout from "../components/layout"
@@ -17,23 +18,22 @@ export default function IndexPage({ data }) {
         </div>
         <div className="ulad-links-container flex flex-row content-center justify-center">
           <Link
-            className="btn text-5xl font-bold w-1/4 m-8 text-red-600  bg-yellow-500 hover:bg-yellow-300 p-8 rounded shadow-lg"
+            className="text-5xl font-bold m-8 w-1/3 p-8 md:p-4 md:text-2xl bg-gray-600 text-gray-200 rounded shadow-lg"
             to="/tochky_upn"
           >
             УПН
           </Link>
           <Link
-            className="btn text-5xl font-bold w-1/4 m-8 text-yellow-500  bg-red-600 hover:bg-red-500 p-8 rounded-lg shadow-lg"
+            className="text-5xl font-bold m-8 w-1/3 p-8 md:p-4 md:text-2xl bg-gray-600 text-gray-200 rounded-lg shadow-lg"
             to="/tochky_upu"
           >
             УПЮ+
           </Link>
         </div>
         <div className="mt-8">
-          <Link className="text-gray-200 text-4xl">?</Link>
-        </div>
-        <div>
-          <Link></Link>
+          <Link className="faq-link text-3xl text-gray-200" to="/faq">
+            ?
+          </Link>
         </div>
       </div>
     </Layout>

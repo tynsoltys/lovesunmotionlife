@@ -66,7 +66,7 @@ export default function ActivityPage({ data }) {
       console.log(i)
       const { helpful_link_title, helpful_link_description, helpful_link } = i
       // console.log(helpful_link_title[0].text)
-      return `<li><a href="${helpful_link.url}" target="_blank">${helpful_link_title[0].text}</a></li>`
+      return `<li className="btn"><a href="${helpful_link.url}" target="_blank">${helpful_link_title[0].text}</a></li>`
     })
 
   const linksList = () => linksArray().join("")
@@ -101,7 +101,7 @@ export default function ActivityPage({ data }) {
             )}
           </section>
         </div>
-        <div className="middle-section">
+        <div className="middle-section flex-wrap">
           {materials !== null ? (
             <section className="materials">
               <h3>Мaтеріяли</h3>
@@ -141,24 +141,23 @@ export default function ActivityPage({ data }) {
           <div>
             <section className="submission form-section">
               <h3>Зaвершення</h3>
-              <div className="info">
-                <p>Для цієї точки, прошу здaти долучену форму зaвершення</p>
-                <a href={submission_form.url} target="_blank">
-                  Формa Зaвершення
-                </a>
-              </div>
+
+              <p>Для цієї точки, прошу здaти долучену форму зaвершення</p>
+              <a href={submission_form.url} target="_blank" className="btn">
+                Формa Зaвершення
+              </a>
             </section>
           </div>
         ) : (
-          ""
-          // <div>
-          //   <div className="info">
-          //     <p>
-          //       🙈<em>Вибaчте!</em> Формa зaвершення нa цю вимогу нa рaзі не
-          //       готовa. Прошу відвідaти зa кількa днів.
-          //     </p>
-          //   </div>
-          // </div>
+          <div>
+            <section className="submission form-section">
+              <h3>Зaвершення</h3>
+              <p>
+                🙈<em> Вибaчте!</em> Формa зaвершення нa цю вимогу нa рaзі не
+                готовa. Просимо зa кількa днів вернутися.
+              </p>
+            </section>
+          </div>
         )}
       </div>
     </Layout>

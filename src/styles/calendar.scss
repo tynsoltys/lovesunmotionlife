@@ -6,7 +6,7 @@
   margin: auto;
   div.day-container {
     width: 15%;
-    flex: 1 0 auto;
+    flex: 1 0 150px;
     margin: 10px;
     @apply p-2;
     @apply pt-4;
@@ -21,6 +21,8 @@
         @apply text-orange-600;
       }
     }
+    @media (max-width: 800px) {
+    }
   }
   h3 {
     font-size: 1em;
@@ -32,7 +34,7 @@
     @apply px-2;
     @apply py-1;
     .oho {
-      font-size: 0.5em;
+      font-size: 0.4em;
     }
   }
   .a,

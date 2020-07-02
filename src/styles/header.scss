@@ -23,7 +23,9 @@ header {
   .header-link {
     text-align: center;
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 12%;
     a {
       text-align: center;
     }
@@ -32,7 +34,7 @@ header {
   a {
     // border: 1px solid red;
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    @apply text-gray-300;
     height: 100%;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -46,6 +48,9 @@ header {
       @apply bg-gray-600;
 
       @apply px-4;
+    }
+    @media (max-width: 800px) {
+      font-size: 0.8em;
     }
   }
 
@@ -65,6 +70,9 @@ header {
       max-width: 80px;
       margin-bottom: 0;
     }
+    @media (max-width: 800px) {
+      width: 15%;
+    }
   }
 
   .calendar-link a:hover,
@@ -75,26 +83,15 @@ header {
     @apply px-4;
   }
 
-  .faq-link {
-    @apply text-green-400;
-    padding-right: 0;
-    a {
-    }
-    transition: all 0.3s;
-    &:hover {
-      @apply text-gray-200;
-    }
-    text-align: right;
-  }
-
   .ulad-toggle {
+    flex: 1 0 auto;
     padding: 0;
     margin: 0;
 
     a {
       display: flex;
-
       flex-flow: row wrap;
+      padding: 10px 0px;
     }
     .ulads {
       flex: 1 0 auto;
@@ -122,16 +119,50 @@ header {
     }
     &:hover {
     }
+    @media (max-width: 800px) {
+      width: 20% !important;
+      .ulads {
+        display: block;
+        font-size: 1.1em;
+      }
+      transform: scale(0.8);
+    }
   }
   .ulad-toggle,
-  .faq-link {
+  .faq-link,
+  .back-arrow {
     width: 12%;
   }
   .tochky-link,
   .calendar-link {
     width: 30%;
+    @media (max-width: 800px) {
+      a {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        span {
+          display: none;
+        }
+      }
+    }
   }
-  @media (max-width: 1050px) {
-    font-size: 0.7em;
+}
+
+.faq-link {
+  @apply text-green-400;
+  padding-right: 0;
+  a {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: lighter;
+    padding: 0;
+    line-height: 40px;
   }
+  transition: all 0.3s;
+  &:hover {
+    @apply text-gray-200;
+  }
+  text-align: right;
 }
