@@ -3,7 +3,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 72px;
+  // height: 72px;
   @apply bg-gray-700;
   @apply text-gray-200;
   @apply shadow-lg;
@@ -66,19 +66,11 @@ header {
       width: 100%;
       text-align: center;
       margin: auto;
-      max-width: 80px;
+      max-width: 70px;
       margin-bottom: 0;
     }
     @media (max-width: 800px) {
       width: 15%;
-    }
-  }
-
-  .calendar-link a:hover,
-  .tochky-link a:hover {
-    color: white;
-    .icon-color {
-      opacity: 1;
     }
   }
 
@@ -97,27 +89,40 @@ header {
       text-align: left;
       color: rgba(255, 255, 255, 0.6);
       font-size: 0.8em;
+      max-height: 40px;
+      line-height: 20px;
+      span {
+        display: block;
+      }
     }
     .toggle-container {
-      border-radius: 27px;
-      height: 50px;
+      border-radius: 6px;
+      height: 40px;
       padding: 3px;
       width: 27px;
       border: 1px solid rgba(255, 255, 255, 0.4);
       margin-right: 10px;
       .toggle-ball {
+        transition: all 0.3s;
         @apply bg-ronchi-500;
         height: 19px;
         width: 19px;
-        border-radius: 50%;
+        border-radius: 4px;
         &.toggle-upu {
-          margin-top: 22px;
+          margin-top: 12px;
           @apply bg-punch-500;
         }
       }
     }
     &:hover {
+      .toggle-ball {
+        margin-top: 7px;
+        &.toggle-upu {
+          margin-top: 7px !important;
+        }
+      }
     }
+
     @media (max-width: 800px) {
       width: 20% !important;
       .ulads {
@@ -132,9 +137,20 @@ header {
   .back-arrow {
     width: 12%;
   }
+
+  .calendar-link a:hover,
+  .tochky-link a:hover {
+    color: white;
+    .icon-color {
+      opacity: 1;
+    }
+  }
   .tochky-link,
   .calendar-link {
     width: 30%;
+    span {
+      margin-left: 5px;
+    }
     @media (max-width: 800px) {
       a {
         font-size: 0.9em;
@@ -157,13 +173,9 @@ header {
   @apply text-green-400;
   padding-right: 0;
   a {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
     text-align: center;
     font-weight: lighter;
     padding: 0;
-    line-height: 40px;
   }
   transition: all 0.3s;
   &:hover {

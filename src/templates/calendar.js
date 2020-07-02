@@ -27,7 +27,9 @@ export default function CalendarPage({ data }) {
       <div className="calendar-container calendar-placeholder">
         <div className={`day-19 day-container`}>
           <h3>
-            Понеділок 19<span className="oho">ого</span>
+            <span className="weekday">Понеділок</span>
+            <span className="day-number">19</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 19b">
             <p>Щось рухливе..</p>
@@ -41,7 +43,9 @@ export default function CalendarPage({ data }) {
         </div>
         <div className={`day-20 day-container`}>
           <h3>
-            Вівторок 20<span className="oho">ого</span>
+            <span className="weekday">Вівторок</span>
+            <span className="day-number">20</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 20b">
             <p>Щось рухливе..</p>
@@ -55,7 +59,9 @@ export default function CalendarPage({ data }) {
         </div>
         <div className={`day-21 day-container`}>
           <h3>
-            Середa 21<span className="oho">ого</span>
+            <span className="weekday">Середa</span>
+            <span className="day-number">21</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 21b">
             <p>Щось рухливе..</p>
@@ -69,7 +75,9 @@ export default function CalendarPage({ data }) {
         </div>
         <div className={`day-22 day-container`}>
           <h3>
-            Четвер 22<span className="oho">ого</span>
+            <span className="weekday">Четвер</span>{" "}
+            <span className="day-number">22</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 22b">
             <p>Щось рухливе..</p>
@@ -83,7 +91,9 @@ export default function CalendarPage({ data }) {
         </div>
         <div className={`day-23 day-container`}>
           <h3>
-            П'ятниця 23<span className="oho">ого</span>
+            <span className="weekday">П'ятниця</span>
+            <span className="day-number">23</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 23b">
             <p>Щось рухливе..</p>
@@ -97,7 +107,9 @@ export default function CalendarPage({ data }) {
         </div>
         <div className={`day-24 day-container`}>
           <h3>
-            Суботa 24<span className="oho">ого</span>
+            <span className="weekday">Суботa</span>
+            <span className="day-number">24</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 24b">
             <p>Щось рухливе..</p>
@@ -111,7 +123,9 @@ export default function CalendarPage({ data }) {
         </div>
         <div className={`day-25 day-container`}>
           <h3>
-            Неділя 25<span className="oho">ого</span>
+            <span className="weekday">Неділя</span>
+            <span className="day-number">25</span>
+            <span className="oho">ого</span>
           </h3>
           <div className="a 25b">
             <p>Щось рухливе..</p>

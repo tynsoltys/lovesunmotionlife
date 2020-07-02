@@ -23,7 +23,6 @@ const Header = ({ ulad, pageType, uladName }) => {
               </div>
               <div className="ulads">
                 <span>УПН</span>
-                <br />
                 <span>УПЮ+</span>
               </div>
             </Link>

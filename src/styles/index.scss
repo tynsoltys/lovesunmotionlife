@@ -17,8 +17,8 @@
 // }
 
 .body-container {
-  min-height: 100vh;
-  padding-top: 100px;
+  min-height: calc(100vh - 60px);
+  padding-top: 60px;
   &.homepage-page {
     @include topo-bg;
     padding-top: 0;
