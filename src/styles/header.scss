@@ -3,7 +3,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  // height: 72px;
+  height: 60px;
   @apply bg-gray-700;
   @apply text-gray-200;
   @apply shadow-lg;
@@ -78,7 +78,6 @@ header {
     flex: 1 0 auto;
     padding: 0;
     margin: 0;
-
     a {
       display: flex;
       flex-flow: row wrap;
@@ -182,4 +181,10 @@ header {
     @apply text-gray-200;
   }
   text-align: right;
+}
+
+.back-arrow {
+  justify-content: center;
+
+  text-align: center;
 }

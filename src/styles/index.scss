@@ -11,13 +11,14 @@
 @import "tochky";
 @import "activity";
 @import "calendar";
+@import "faq";
 
 // .body-container {
 //   height: 100vh;
 // }
 
 .body-container {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh);
   padding-top: 60px;
   &.homepage-page {
     @include topo-bg;
@@ -27,11 +28,12 @@
   @include topo-bg-gray;
   background-attachment: fixed;
   main {
-    min-height: calc(100vh - 172px - 46px);
+    min-height: 100vh;
     > div {
       max-width: 1200px !important;
       margin: auto;
       @apply p-8;
+      min-height: 100%;
       @media (max-width: 800px) {
         @apply p-1;
       }

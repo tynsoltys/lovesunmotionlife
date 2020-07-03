@@ -1,9 +1,11 @@
 .tochky-container {
   max-width: 1200px !important;
   display: flex;
+  height: 100%;
   justify-content: center;
   margin: auto;
   flex-flow: row wrap;
+  margin-top: 30px;
   li {
     width: calc(25% - 10px);
     margin: 5px;
@@ -13,7 +15,7 @@
     section {
       a {
         display: block;
-        height: 150px;
+        min-height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -108,6 +110,9 @@
         @apply text-gray-100;
         // @apply text-red-500;
       }
+      div div:after {
+        @apply text-punch-500;
+      }
     }
   }
   .sun-list {
@@ -120,6 +125,9 @@
         @apply bg-ronchi-500;
         @apply text-ronchi-500;
         @apply text-gray-100;
+      }
+      div div:after {
+        @apply text-ronchi-500;
       }
     }
   }
@@ -138,6 +146,9 @@
         @apply text-zelene-500;
         @apply text-gray-100;
       }
+      div div:after {
+        @apply text-zelene-500;
+      }
     }
   }
   .zife-list {
@@ -150,6 +161,9 @@
         @apply bg-syne-500;
         @apply text-syne-500;
         @apply text-gray-100;
+      }
+      div div:after {
+        @apply text-syne-500;
       }
     }
   }
@@ -167,4 +181,34 @@
   letter-spacing: 1px;
   // padding: 5px;
   border-radius: 50%;
+}
+
+.tochka-item {
+  position: relative;
+}
+
+.tochka-item div div {
+  // border: 1px solid red;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transform: scaleX(1.8);
+  @apply p-2;
+  // @apply px-4;
+  &:after {
+    content: "▾";
+    font-size: 2.4em;
+    font-weight: bolder;
+  }
+}
+
+.legend {
+  line-height: 2.4em;
+}
+
+.legend-symbol {
+  transform: scaleX(1.8);
+  font-size: 2.4em;
+  margin-bottom: 3px;
+  display: inline-block;
 }

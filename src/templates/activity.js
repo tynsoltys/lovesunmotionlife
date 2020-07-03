@@ -24,7 +24,8 @@ export default function ActivityPage({ data }) {
     materials,
     pryklady,
     helpful_links,
-    submission_form,
+
+    submission_link,
     ulad,
     znymka,
   } = activity
@@ -137,13 +138,13 @@ export default function ActivityPage({ data }) {
           )}
         </section>
         <hr class="major-hr" />
-        {submission_form ? (
+        {submission_link ? (
           <div>
             <section className="submission form-section">
               <h3>Зaвершення</h3>
 
               <p>Для цієї точки, прошу здaти долучену форму зaвершення</p>
-              <a href={submission_form.url} target="_blank" className="btn">
+              <a href={submission_link.url} target="_blank" className="btn">
                 Формa Зaвершення
               </a>
             </section>
@@ -179,9 +180,15 @@ export const query = graphql`
               uid
             }
             materials
-            submission_form
             activity_title
             ulad
+            submission_link {
+              _linkType
+              ... on PRISMIC__ExternalLink {
+                _linkType
+                url
+              }
+            }
             pryklady
             helpful_links {
               helpful_link {

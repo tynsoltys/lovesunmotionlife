@@ -46,6 +46,7 @@ export const query = graphql`
             ulad
             activity_title
             activity_subtitle
+            has_event
             _linkType
             _meta {
               uid
@@ -62,6 +63,7 @@ export const query = graphql`
             ulad
             activity_title
             activity_subtitle
+            has_event
             _linkType
             _meta {
               uid

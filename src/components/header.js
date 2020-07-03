@@ -10,11 +10,24 @@ import IconCalendar from "../components/icons/IconCalendar"
 
 const Header = ({ ulad, pageType, uladName }) => {
   console.log(`huhuhuh`, uladName)
+  console.log(pageType)
+
+  const showToggle = () => {
+    if (pageType === "faq") {
+      console.log(pageType)
+      return false
+    } else if (pageType === "activity") {
+      return false
+    } else if (pageType === "tochky") {
+      return true
+    }
+  }
+  console.log(showToggle())
 
   return (
     <header className="">
       <div className="link-container">
-        {pageType !== "activity" ? (
+        {showToggle() ? (
           <div className="header-link ulad-toggle">
             {" "}
             <Link to={`${pageType}_${uladification(!ulad)}`} className="">
@@ -32,22 +45,22 @@ const Header = ({ ulad, pageType, uladName }) => {
             <IconBackArrow />
           </Link>
         )}
-
         <div className="header-link tochky-link">
-          {" "}
-          <Link
-            to={`/tochky_${uladName}`}
-            className={`text-2xl  ${
-              pageType === "tochky" || pageType === "activity"
-                ? `current-page`
-                : null
-            }`}
-          >
-            {/* <FontAwesomeIcon icon={["fal", "th"]} className="mr-1" /> */}
-            <IconGrid color="false" className="mr-2" />
-            Вимоги <span> {ukrainification(ulad)}</span>
-          </Link>
+          {pageType !== "faq" ? (
+            <Link
+              to={`/tochky_${uladName}`}
+              className={`text-2xl ${
+                pageType === "tochky" ? `current-page` : null
+              }`}
+            >
+              <IconGrid />
+              Проєкти
+            </Link>
+          ) : (
+            " "
+          )}
         </div>
+
         <div className="header-link logo-link">
           {" "}
           <Link to="/" className="logo ">
@@ -55,17 +68,19 @@ const Header = ({ ulad, pageType, uladName }) => {
           </Link>
         </div>
         <div className="header-link calendar-link">
-          {" "}
-          <Link
-            to={`/calendar_${uladName}`}
-            className={`text-2xl ${
-              pageType === "calendar" ? `current-page` : null
-            }`}
-          >
-            {/* <FontAwesomeIcon icon={["fal", "calendar-alt"]} className="mr-1" /> */}
-            <IconCalendar />
-            Зустріч <span> {ukrainification(ulad)}</span>
-          </Link>
+          {pageType !== "faq" ? (
+            <Link
+              to={`/calendar_${uladName}`}
+              className={`text-2xl ${
+                pageType === "calendar" ? `current-page` : null
+              }`}
+            >
+              <IconCalendar />
+              Зустріч
+            </Link>
+          ) : (
+            " "
+          )}
         </div>
         <div className="header-link faq-link ">
           {" "}
