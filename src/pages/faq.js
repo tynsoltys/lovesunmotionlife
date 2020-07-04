@@ -21,7 +21,14 @@ export default function FaqPage({ data }) {
     <Layout pageType="faq">
       <div className="faq-container">
         <section className="intro border-4 border-gray-700">
-          <h2>{faqpage.faq_page_title[0].text}</h2>
+          <h2 className=" inline-block">{faqpage.faq_page_title[0].text}</h2>
+          {""}
+          <a
+            href="#"
+            className=" float-right text-xs english-link text-gray-500 uppercase"
+          >
+            Download FAQ in English
+          </a>
           <hr />
           <p>{faqpage.faq_info[0].text}</p>
           <ul className="faq-topics-list">
@@ -59,6 +66,7 @@ export default function FaqPage({ data }) {
               </a>
             </li>
           </ul>
+          <p className="text-center mt-4 mb-0 "></p>
         </section>
         <section
           className="general faq-block border-4 border-punch-500"
@@ -98,7 +106,9 @@ export default function FaqPage({ data }) {
                   <h4 className={`zustrich_q_${j} question`}>
                     {i.question[0].text} <span className="expando">＋</span>
                   </h4>
-                  <p className={`zustrich_a_${j} answer`}>{i.answer[0].text}</p>{" "}
+                  <p className={`zustrich_a_${j} answer text-black`}>
+                    {i.answer[0].text}
+                  </p>{" "}
                 </div>
               )
             })}
@@ -188,6 +198,10 @@ export default function FaqPage({ data }) {
             </a>
           </div>
         </section>
+        <p className="text-center text-sm italic text-400 m-4">
+          Як вaм дуже, дуже требa сконтaктувaтися з проводом, просимо нaписaти
+          емейл до нaс <a href="mailto:plastscoutingcanada@gmail.com">тут</a>.{" "}
+        </p>
       </div>
     </Layout>
   )

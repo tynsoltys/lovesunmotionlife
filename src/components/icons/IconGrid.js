@@ -11,7 +11,7 @@ const IconGrid = props => {
         xmlns="http://www.w3.org/2000/svg"
         className="icon-grid"
       >
-        <title>lsml-grid</title>
+        <title>Схемa Проектів</title>
         <g
           id="lsml-grid-gs"
           stroke="none"

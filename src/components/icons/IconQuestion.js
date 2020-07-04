@@ -11,7 +11,7 @@ const IconQuestion = props => {
         xmlns="http://www.w3.org/2000/svg"
         className="icon-question"
       >
-        <title>lsml-question-square</title>
+        <title>Мaєш питaння? 🙈</title>
         <g
           id="lsml-question-square-col"
           stroke="none"

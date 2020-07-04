@@ -11,7 +11,7 @@ const IconCalendar = props => {
         xmlns="http://www.w3.org/2000/svg"
         className="icon-calendar"
       >
-        <title>lsml-cal-gs</title>
+        <title>Кaлєндaр Зустрічі</title>
         <g
           id="lsml-cal-gs"
           stroke="none"

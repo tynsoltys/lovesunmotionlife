@@ -54,7 +54,7 @@ const Header = ({ ulad, pageType, uladName }) => {
               }`}
             >
               <IconGrid />
-              Проєкти
+              <span className="header-link-word">Проєкти</span>
             </Link>
           ) : (
             " "
@@ -76,7 +76,7 @@ const Header = ({ ulad, pageType, uladName }) => {
               }`}
             >
               <IconCalendar />
-              Зустріч
+              <span className="header-link-word">Зустріч</span>
             </Link>
           ) : (
             " "

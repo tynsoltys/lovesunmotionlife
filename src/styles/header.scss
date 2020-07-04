@@ -72,6 +72,9 @@ header {
     @media (max-width: 800px) {
       width: 15%;
     }
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   .ulad-toggle {
@@ -115,9 +118,10 @@ header {
     }
     &:hover {
       .toggle-ball {
-        margin-top: 7px;
+        // margin-top: 7px;
+        @apply bg-ronchi-400;
         &.toggle-upu {
-          margin-top: 7px !important;
+          @apply bg-punch-400;
         }
       }
     }
@@ -152,11 +156,8 @@ header {
     }
     @media (max-width: 800px) {
       a {
-        font-size: 0.9em;
+        // font-size: 0.9em;
         padding: 10px 15px;
-        span {
-          display: none;
-        }
       }
     }
     .icon-container {
@@ -164,6 +165,15 @@ header {
     }
     &:hover .icon-color {
       opacity: 1;
+    }
+    @media (max-width: 600px) {
+      width: 25%;
+      .header-link-word {
+        display: none;
+      }
+      a {
+        font-size: 2em;
+      }
     }
   }
 }
@@ -181,6 +191,9 @@ header {
     @apply text-gray-200;
   }
   text-align: right;
+  @media (max-width: 600px) {
+    width: 19% !important;
+  }
 }
 
 .back-arrow {

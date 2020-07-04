@@ -33,12 +33,16 @@
       max-width: 1200px !important;
       margin: auto;
       @apply p-8;
-      min-height: 100%;
+
       @media (max-width: 800px) {
         @apply p-1;
       }
     }
   }
+}
+
+.homepage-container {
+  min-height: 100vh;
 }
 
 .logo-container {

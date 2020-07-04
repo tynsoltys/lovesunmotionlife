@@ -11,7 +11,7 @@ const IconBackArrow = props => {
         xmlns="http://www.w3.org/2000/svg"
         className="icon-back-arrow"
       >
-        <title>lsml-arrow-square-col copy</title>
+        <title>??????? ??</title>
         <g
           id="lsml-arrow-square-col-copy"
           stroke="none"
