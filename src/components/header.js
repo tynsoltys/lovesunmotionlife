@@ -41,7 +41,7 @@ const Header = ({ ulad, pageType, uladName }) => {
             </Link>
           </div>
         ) : (
-          <Link to={`/tochky_${uladName}`} className={`back-arrow text-2xl`}>
+          <Link to={`/tochky_${uladName}`} className={`back-arrow text-3xl`}>
             <IconBackArrow />
           </Link>
         )}
@@ -84,7 +84,7 @@ const Header = ({ ulad, pageType, uladName }) => {
         </div>
         <div className="header-link faq-link ">
           {" "}
-          <Link to={`/faq`} className="text-2xl">
+          <Link to={`/faq`} className="text-3xl">
             <IconQuestion color="false" />
           </Link>
         </div>

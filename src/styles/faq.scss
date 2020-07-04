@@ -4,33 +4,115 @@
     @apply bg-gray-100;
     @apply rounded-lg;
     @apply shadow-lg;
-    @apply m-4;
+    @apply my-8;
     @apply p-8;
   }
-}
 
-.faq-topics-list {
-  margin: 0;
-  padding: 0;
-  li {
-    margin: 10px;
-    a {
-      @apply rounded-lg;
-      @apply px-4;
-      @apply py-2;
+  .faq-topics-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    li {
       margin: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      a {
+        @apply rounded-lg;
+        @apply px-4;
+        @apply py-2;
+      }
     }
   }
-}
 
-.top-link {
-  text-align: right;
-  font-size: 2.4em;
-  svg {
-    transform: rotate(90deg);
-    rect,
-    text {
-      color: #4a5568;
+  .top-link {
+    text-align: right;
+    margin-right: 5px;
+    @apply text-3xl;
+    svg {
+      transform: rotate(90deg);
+      rect {
+        stroke: #4a5568;
+      }
+      text {
+        fill: #4a5568;
+      }
     }
+    &:hover {
+      svg rect {
+        stroke: #4a5568;
+        fill: #e2e8f0;
+      }
+    }
+  }
+
+  .expando {
+    float: right;
+    font-size: 2em;
+    margin-top: -10px;
+    margin-right: -5px;
+    transition: all 0.3s;
+  }
+
+  h4.active {
+    transition: all 0.5s;
+    @apply bg-gray-400;
+    margin-bottom: 0;
+    .expando {
+      display: inline-block;
+      transform: rotate(45deg);
+      margin-left: 30px;
+      margin-top: 15px;
+    }
+    &:hover {
+      @apply bg-gray-400;
+    }
+  }
+
+  .faq-pair {
+  }
+  ul {
+    margin-left: 0;
+  }
+
+  h4.question {
+    position: relative;
+    z-index: 100;
+    @apply p-4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @apply px-6;
+    @apply bg-gray-300;
+    @apply border-gray-300;
+    @apply rounded-lg;
+    margin-bottom: 10px;
+    &:hover {
+      cursor: pointer;
+      @apply bg-gray-200;
+    }
+  }
+
+  p.answer {
+    position: relative;
+    // z-index: 90;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    transition: all 0.5s;
+  }
+
+  h4.active + p.answer {
+    display: block;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 10px;
+    // @apply bg-gray-200;
+    @apply p-4;
+    @apply rounded-lg;
   }
 }

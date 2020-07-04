@@ -15,15 +15,15 @@ const IconQuestion = props => {
         <g
           id="lsml-question-square-col"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           className="icon-color "
         >
           <rect
             id="Rectangle"
             stroke="#D63A26"
-            stroke-width="11"
+            strokeWidth="11"
             fill="#ECC94C"
             x="5.5"
             y="5.5"
@@ -33,10 +33,10 @@ const IconQuestion = props => {
           ></rect>
           <text
             id="?"
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
+            fontFamily="Rubik-Light, Rubik"
+            fontSize="220"
+            fontWeight="300"
+            letterSpacing="62.9880952"
             fill="#D63A26"
           >
             <tspan x="60.1759524" y="196">
@@ -47,15 +47,15 @@ const IconQuestion = props => {
         <g
           id="lsml-question-square"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           className="icon-gs"
         >
           <rect
             id="Rectangle"
             stroke="#E2E8F0"
-            stroke-width="11"
+            strokeWidth="11"
             x="5.5"
             y="5.5"
             width="222"
@@ -64,10 +64,10 @@ const IconQuestion = props => {
           ></rect>
           <text
             id="?"
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
+            fontFamily="Rubik-Light, Rubik"
+            fontSize="220"
+            fontWeight="300"
+            letterSpacing="62.9880952"
             fill="#E2E8F0"
           >
             <tspan x="60.1759524" y="196">

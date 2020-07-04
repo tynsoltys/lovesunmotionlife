@@ -15,15 +15,15 @@ const IconBackArrow = props => {
         <g
           id="lsml-arrow-square-col-copy"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           className="icon-gs"
         >
           <rect
             id="Rectangle"
             stroke="#E2E8F0"
-            stroke-width="11"
+            strokeWidth="11"
             x="5.5"
             y="5.5"
             width="222"
@@ -32,10 +32,10 @@ const IconBackArrow = props => {
           ></rect>
           <text
             id="â€”"
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
+            fontFamily="Rubik-Light, Rubik"
+            fontSize="220"
+            fontWeight="300"
+            letterSpacing="62.9880952"
             fill="#E2E8F0"
           >
             <tspan x="32.1359524" y="181">
@@ -45,10 +45,10 @@ const IconBackArrow = props => {
           <text
             id="-"
             transform="translate(93.500000, 61.500000) rotate(-45.000000) translate(-93.500000, -61.500000) "
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
+            fontFamily="Rubik-Light, Rubik"
+            fontSize="220"
+            fontWeight="300"
+            letterSpacing="62.9880952"
             fill="#E2E8F0"
           >
             <tspan x="8.43595238" y="137">
@@ -58,10 +58,10 @@ const IconBackArrow = props => {
           <text
             id="-"
             transform="translate(93.500000, 168.500000) scale(1, -1) rotate(-45.000000) translate(-93.500000, -168.500000) "
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
+            fontFamily="Rubik-Light, Rubik"
+            fontSize="220"
+            fontWeight="300"
+            letterSpacing="62.9880952"
             fill="#E2E8F0"
           >
             <tspan x="8.43595238" y="244">
@@ -69,64 +69,6 @@ const IconBackArrow = props => {
             </tspan>
           </text>
         </g>
-        {/* <g
-          id="lsml-arrow-square-col"
-          stroke="none"
-          stroke-width="1"
-          fill="none"
-          fill-rule="evenodd"
-          className="icon-color"
-        >
-          <rect
-            id="Rectangle"
-            stroke="#D63A26"
-            stroke-width="11"
-            fill="#ECC94C"
-            x="5.5"
-            y="5.5"
-            width="222"
-            height="222"
-            rx="24"
-          ></rect>
-          <text
-            id="â€”"
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
-            fill="#D63A26"
-          >
-            <tspan x="32.1359524" y="181">
-              &#8212;
-            </tspan>
-          </text>
-          <text
-            id="-"
-            transform="translate(93.500000, 61.500000) rotate(-45.000000) translate(-93.500000, -61.500000) "
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
-            fill="#D63A26"
-          >
-            <tspan x="8.43595238" y="137">
-              -
-            </tspan>
-          </text>
-          <text
-            id="-"
-            transform="translate(93.500000, 168.500000) scale(1, -1) rotate(-45.000000) translate(-93.500000, -168.500000) "
-            font-family="Rubik-Light, Rubik"
-            font-size="220"
-            font-weight="300"
-            letter-spacing="62.9880952"
-            fill="#D63A26"
-          >
-            <tspan x="8.43595238" y="244">
-              -
-            </tspan>
-          </text>
-        </g> */}
       </svg>
     </div>
   )

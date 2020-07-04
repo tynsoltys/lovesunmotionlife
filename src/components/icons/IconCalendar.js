@@ -15,9 +15,9 @@ const IconCalendar = props => {
         <g
           id="lsml-cal-gs"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           className="icon-gs"
         >
           <rect
