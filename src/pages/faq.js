@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 import IconBackArrow from "../components/icons/IconBackArrow"
 
@@ -13,18 +13,9 @@ export default function FaqPage({ data }) {
   const faqpage = prismicContent.node
   console.log(faqpage)
 
-  let qs = Array.from(document.getElementsByTagName("h4"))
-
-  const addListeners = a =>
-    a.map(i => {
-      i.addEventListener("click", function () {
-        console.log(this)
-        this.classList.toggle("active")
-      })
-    })
-
-  addListeners(qs)
-  console.log(qs)
+  const addClass = (id, eve) => {
+    console.log(id, eve)
+  }
 
   return (
     <Layout pageType="faq">
@@ -78,7 +69,11 @@ export default function FaqPage({ data }) {
             {faqpage.general_section_faq.map((i, j) => {
               return (
                 <div className="faq-pair" key={`g${j}`}>
-                  <h4 className={`general_q_${j} question`}>
+                  <h4
+                    className={`general_q_${j} question`}
+                    onClick={console.log(this)}
+                    onClick={this.addClass.bind(this, `general_q_${j}`)}
+                  >
                     {i.question[0].text} <span className="expando">＋</span>
                   </h4>
                   <p className={`general_a_${j} answer`}>{i.answer[0].text}</p>{" "}

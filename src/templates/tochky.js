@@ -9,11 +9,15 @@ export default function TochkaPage({ data }) {
   if (!prismicContent) {
     return null
   }
+
   const tochkaPage = prismicContent.node
   const { tochky_title, ulad } = tochkaPage
 
   const upnActivitys = data.prismic.upnActivitys
   const upuActivitys = data.prismic.upuActivitys
+
+  console.log(upnActivitys)
+  console.log(upuActivitys)
 
   return (
     <Layout ulad={ulad} pageType="tochky">

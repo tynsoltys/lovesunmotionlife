@@ -101,11 +101,17 @@ const TochkaGrid = ({ ulad, tochky }) => {
           <section>
             <Markup content={liConstructor("z1")} />
             <Markup content={liConstructor("z2")} />
-            {/* <Markup content={liConstructor("z3")} /> */}
+            <Markup content={liConstructor("z3")} />
             <Markup content={liConstructor("z4")} />
           </section>
         </li>
       </ul>
+      <div className="w-full text-center legend">
+        <p>
+          <span className="legend-symbol mr-3">▾</span>можнa виконaти підчaс
+          зустрічі
+        </p>
+      </div>
     </>
   )
 }
