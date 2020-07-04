@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env`,
+})
 module.exports = {
   siteMetadata: {
     title: `Любимо Сонце Рух Життя`,
@@ -57,10 +60,10 @@ module.exports = {
     {
       resolve: "gatsby-source-prismic-graphql",
       options: {
-        repositoryName: "lsml-2", // (REQUIRED, replace with your own)
+        repositoryName: process.env.PRISMIC_REPOSITORY_NAME, // (REQUIRED, replace with your own)
         defaultLang: "en-ca",
         langs: ["ua-ua", "en-ca"],
-        accessToken: `MC5YdUU3cGhJQUFGYk5ZWFdv.R--_vQ5177-9YO-_ve-_vQ43SmDvv73vv73vv71WUO-_ve-_vT3vv73vv71F77-977-977-977-9BFIHR--_vQ`, // (optional API access token)
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN, // (optional API access token)
         previews: false, // (optional, activated Previews. Default: false)
         pages: [
           {
