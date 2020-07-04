@@ -13,14 +13,14 @@ export default function FaqPage({ data }) {
   const faqpage = prismicContent.node
   console.log(faqpage)
 
-  const addClass = (id, eve) => {
+  function addClass(id, eve) {
     console.log(id, eve)
   }
 
   return (
     <Layout pageType="faq">
       <div className="faq-container">
-        <section className="intro">
+        <section className="intro border-4 border-gray-700">
           <h2>{faqpage.faq_page_title[0].text}</h2>
           <hr />
           <p>{faqpage.faq_info[0].text}</p>
@@ -65,15 +65,12 @@ export default function FaqPage({ data }) {
           id="general"
         >
           <h3>{faqpage.general_section_title[0].text}</h3>
+          <hr />
           <ul>
             {faqpage.general_section_faq.map((i, j) => {
               return (
                 <div className="faq-pair" key={`g${j}`}>
-                  <h4
-                    className={`general_q_${j} question`}
-                    onClick={console.log(this)}
-                    onClick={this.addClass.bind(this, `general_q_${j}`)}
-                  >
+                  <h4 className={`general_q_${j} question`}>
                     {i.question[0].text} <span className="expando">＋</span>
                   </h4>
                   <p className={`general_a_${j} answer`}>{i.answer[0].text}</p>{" "}
@@ -81,6 +78,7 @@ export default function FaqPage({ data }) {
               )
             })}
           </ul>
+          <hr />
           <div className="top-link">
             <a href="#intro">
               <IconBackArrow />
@@ -92,6 +90,7 @@ export default function FaqPage({ data }) {
           id="zustrich"
         >
           <h3>{faqpage.zustrich_section_title[0].text}</h3>
+          <hr />
           <ul>
             {faqpage.zustrich_section_faq.map((i, j) => {
               return (
@@ -104,6 +103,7 @@ export default function FaqPage({ data }) {
               )
             })}
           </ul>
+          <hr />
           <div className="top-link">
             <a href="#intro">
               <IconBackArrow />
@@ -115,6 +115,7 @@ export default function FaqPage({ data }) {
           id="tochky"
         >
           <h3>{faqpage.tochky_section_title[0].text}</h3>
+          <hr />
           <ul>
             {faqpage.tochky_section_faq.map((i, j) => {
               return (
@@ -127,6 +128,7 @@ export default function FaqPage({ data }) {
               )
             })}
           </ul>
+          <hr />
           <div className="top-link">
             <a href="#intro">
               <IconBackArrow />
@@ -138,6 +140,7 @@ export default function FaqPage({ data }) {
           id="submission-info"
         >
           <h3>{faqpage.submission_section_title[0].text}</h3>
+          <hr />
           <ul>
             {faqpage.submission_section_faq.map((i, j) => {
               return (
@@ -152,6 +155,7 @@ export default function FaqPage({ data }) {
               )
             })}
           </ul>
+          <hr />
           <div className="top-link">
             <a href="#intro">
               <IconBackArrow />
@@ -163,6 +167,7 @@ export default function FaqPage({ data }) {
           id="tshirt"
         >
           <h3>{faqpage.tshirt_section_title[0].text}</h3>
+          <hr />
 
           <ul>
             {faqpage.tshirt_section_faq.map((i, j) => {
@@ -176,6 +181,7 @@ export default function FaqPage({ data }) {
               )
             })}
           </ul>
+          <hr />
           <div className="top-link">
             <a href="#intro">
               <IconBackArrow />
