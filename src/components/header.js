@@ -18,7 +18,7 @@ const Header = ({ ulad, pageType, uladName }) => {
       return false
     } else if (pageType === "activity") {
       return false
-    } else if (pageType === "tochky") {
+    } else {
       return true
     }
   }

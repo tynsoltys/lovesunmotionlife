@@ -212,3 +212,7 @@
   margin-bottom: 3px;
   display: inline-block;
 }
+
+.has-event-false:after {
+  visibility: hidden;
+}
