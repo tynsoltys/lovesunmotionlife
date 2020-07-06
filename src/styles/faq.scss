@@ -6,6 +6,10 @@
     @apply shadow-lg;
     @apply my-8;
     @apply p-8;
+    @media (max-width: 800px) {
+      @apply my-4;
+      @apply p-4;
+    }
   }
 
   .faq-topics-list {
@@ -48,6 +52,15 @@
         stroke: #4a5568;
         fill: #e2e8f0;
       }
+    }
+  }
+
+  .english-link {
+    @media (max-width: 800px) {
+      width: 100%;
+      display: block;
+      float: none;
+      margin-bottom: 20px;
     }
   }
 
