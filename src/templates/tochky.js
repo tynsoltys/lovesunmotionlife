@@ -11,7 +11,7 @@ export default function TochkaPage({ data }) {
   }
 
   const tochkaPage = prismicContent.node
-  const { tochky_title, ulad } = tochkaPage
+  const { tochkuvannia_pdf, ulad } = tochkaPage
 
   const upnActivitys = data.prismic.upnActivitys
   const upuActivitys = data.prismic.upuActivitys
@@ -24,6 +24,7 @@ export default function TochkaPage({ data }) {
       <TochkaGrid
         tochky={ulad == true ? upuActivitys : upnActivitys}
         ulad={uladification(ulad)}
+        file={tochkuvannia_pdf}
       />
     </Layout>
   )
@@ -40,6 +41,13 @@ export const query = graphql`
             _linkType
             _meta {
               uid
+            }
+            tochkuvannia_pdf {
+              _linkType
+              ... on PRISMIC__FileLink {
+                _linkType
+                url
+              }
             }
           }
         }

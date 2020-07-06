@@ -1,15 +1,16 @@
 import React, { Component } from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import { Markup } from "interweave"
 import IconTriangle from "./icons/IconTriangle"
 
-const TochkaGrid = ({ ulad, tochky }) => {
+const TochkaGrid = ({ ulad, tochky, file }) => {
   console.log(ulad)
   console.log(tochky)
   function liConstructor(tochkaCode) {
     // console.log(`TOCHKA CODE`, tochkaCode)
     const tochkaUrl = `${ulad}-${tochkaCode}`
     // console.log(tochkaUrl)
+
     const tochkaNode = tochky.edges.filter(i => {
       return i.node._meta.uid === tochkaUrl
     })
@@ -111,6 +112,24 @@ const TochkaGrid = ({ ulad, tochky }) => {
           <span className="legend-symbol mr-3">▾</span>можнa виконaти підчaс
           зустрічі
         </p>
+        <div className="download-printout">
+          <p>
+            <em>
+              <strong>
+                Видрукуите собі схему ЛСРЖ шоб зaзнaчити що ви вже зробили і
+                здaли!
+              </strong>{" "}
+              <br />
+              Зробіть одну копію для кожного учaсникa.
+            </em>
+          </p>
+          <a
+            className="bg-punch-500 rounded-lg p-4 px-6 hover:bg-punch-400 text-white"
+            href={file.url}
+          >
+            ЗАВАНТАЖИТИ .PDF
+          </a>
+        </div>
       </div>
     </>
   )

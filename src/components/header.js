@@ -83,10 +83,13 @@ const Header = ({ ulad, pageType, uladName }) => {
           )}
         </div>
         <div className="header-link faq-link ">
-          {" "}
-          <Link to={`/faq`} className="text-3xl">
-            <IconQuestion color="false" />
-          </Link>
+          {pageType !== "faq" ? (
+            <Link to={`/faq`} className="text-3xl">
+              <IconQuestion color="false" />
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </header>
