@@ -124,7 +124,7 @@ const TochkaGrid = ({ ulad, tochky, file }) => {
             </em>
           </p>
           <a
-            className="bg-punch-500 rounded-lg p-4 px-6 hover:bg-punch-400 text-white"
+            className=" mb-4 bg-punch-500 rounded-lg p-4 px-6 hover:bg-punch-400 text-white"
             href={file.url}
           >
             ЗАВАНТАЖИТИ .PDF
