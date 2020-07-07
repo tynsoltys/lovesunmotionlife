@@ -24,13 +24,20 @@ export default function FaqPage({ data }) {
           <h2 className=" inline-block">{faqpage.faq_page_title[0].text}</h2>
           {""}
           <a
-            href="#"
+            href={faqpage.english_faq_file.url}
             className=" float-right text-xs english-link text-gray-500 uppercase"
           >
             Download FAQ in English
           </a>
           <hr />
+
           <p>{faqpage.faq_info[0].text}</p>
+          <div className="intro-video flex justify-center p-8 w-full">
+            <div
+              className="video-container"
+              dangerouslySetInnerHTML={{ __html: faqpage.intro_video.html }}
+            />
+          </div>
           <ul className="faq-topics-list">
             <li className="faq-topic">
               <a className="bg-punch-500 text-white italic" href="#general">
@@ -98,7 +105,19 @@ export default function FaqPage({ data }) {
           id="zustrich"
         >
           <h3>{faqpage.zustrich_section_title[0].text}</h3>
-          <hr />
+          <hr />{" "}
+          {faqpage.zustrich_video ? (
+            <div className="submission-video flex justify-center p-8 w-full">
+              <div
+                className="video-container"
+                dangerouslySetInnerHTML={{
+                  __html: faqpage.submission_video.html,
+                }}
+              />
+            </div>
+          ) : (
+            ""
+          )}
           <ul>
             {faqpage.zustrich_section_faq.map((i, j) => {
               return (
@@ -151,6 +170,14 @@ export default function FaqPage({ data }) {
         >
           <h3>{faqpage.submission_section_title[0].text}</h3>
           <hr />
+          <div className="submission-video flex justify-center p-8 w-full">
+            <div
+              className="video-container"
+              dangerouslySetInnerHTML={{
+                __html: faqpage.submission_video.html,
+              }}
+            />
+          </div>
           <ul>
             {faqpage.submission_section_faq.map((i, j) => {
               return (
@@ -210,37 +237,66 @@ export default function FaqPage({ data }) {
 export const query = graphql`
   query FaqPageQuery {
     prismic {
+      allTochkys {
+        edges {
+          node {
+            ulad
+            tochky_title
+            _linkType
+            _meta {
+              id
+            }
+            tochkuvannia_pdf {
+              _linkType
+              ... on PRISMIC__FileLink {
+                _linkType
+                url
+              }
+            }
+          }
+        }
+      }
       allFaqs {
         edges {
           node {
+            english_faq_file {
+              _linkType
+              ... on PRISMIC__FileLink {
+                _linkType
+                url
+              }
+            }
             faq_info
             faq_page_title
+            faq_video
             general_section_title
-            submission_section_title
-            tochky_section_title
-            tshirt_section_title
-            zustrich_section_title
             general_section_faq {
               answer
               question
             }
+            intro_video
             submission_section_faq {
               answer
               question
             }
-            tochky_section_faq {
-              answer
-              question
-            }
-            tshirt_section_faq {
-              answer
-              question
-            }
+            zustrich_video
+            zustrich_section_title
             zustrich_section_faq {
               answer
               question
             }
-            _linkType
+            tshirt_section_title
+            tshirt_section_faq {
+              answer
+              question
+            }
+            submission_section_title
+            submission_video
+            tochky_section_faq {
+              answer
+              question
+            }
+            tochky_section_title
           }
         }
       }
