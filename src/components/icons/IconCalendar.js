@@ -114,15 +114,15 @@ const IconCalendar = props => {
         <g
           id="lsml-cal-col"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           className="icon-color"
         >
           <rect
             id="Rectangle"
             stroke="#007ACE"
-            stroke-width="3"
+            strokeWidth="3"
             fill="#007ACE"
             x="2"
             y="23"

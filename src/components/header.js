@@ -12,16 +12,22 @@ const Header = ({ ulad, pageType, uladName }) => {
   console.log(`huhuhuh`, uladName)
   console.log(pageType)
 
+  let backPage = "faq"
   const showToggle = () => {
     if (pageType === "faq") {
-      console.log(pageType)
+      backPage = "faq"
       return false
     } else if (pageType === "activity") {
+      backPage = "tochky"
+      return false
+    } else if (pageType === "event") {
+      backPage = "program"
       return false
     } else {
       return true
     }
   }
+  console.log("BACKPAGE", backPage)
   console.log(showToggle())
 
   return (
@@ -41,7 +47,14 @@ const Header = ({ ulad, pageType, uladName }) => {
             </Link>
           </div>
         ) : (
-          <Link to={`/tochky_${uladName}`} className={`back-arrow text-3xl`}>
+          <Link
+            to={
+              pageType === "activity"
+                ? `/tochky_${uladName}`
+                : `/program_${uladName}`
+            }
+            className={`back-arrow text-3xl`}
+          >
             <IconBackArrow />
           </Link>
         )}
@@ -70,9 +83,9 @@ const Header = ({ ulad, pageType, uladName }) => {
         <div className="header-link calendar-link">
           {pageType !== "faq" ? (
             <Link
-              to={`/calendar_${uladName}`}
+              to={`/program_${uladName}`}
               className={`text-2xl ${
-                pageType === "calendar" ? `current-page` : null
+                pageType === "program" ? `current-page` : null
               }`}
             >
               <IconCalendar />

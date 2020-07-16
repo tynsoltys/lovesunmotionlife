@@ -168,9 +168,9 @@ const IconGrid = props => {
         <g
           id="lsml-grid-col"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           className="icon-color"
         >
           <rect

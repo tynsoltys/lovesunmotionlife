@@ -82,10 +82,17 @@ module.exports = {
           },
           {
             // (optional, builds pages dynamically)
-            type: "Calendar", // TypeName from prismic
+            type: "Program", // TypeName from prismic
             match: "/:uid", // Pages will be generated under this pattern
             path: "/", // Placeholder page for unpublished documents
-            component: require.resolve("./src/templates/calendar.js"),
+            component: require.resolve("./src/templates/program.js"),
+          },
+          {
+            // (optional, builds pages dynamically)
+            type: "Event", // TypeName from prismic
+            match: "/event/:uid", // Pages will be generated under this pattern
+            path: "/event", // Placeholder page for unpublished documents
+            component: require.resolve("./src/templates/event.js"),
           },
         ],
       },
