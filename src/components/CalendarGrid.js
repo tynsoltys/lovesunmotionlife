@@ -89,10 +89,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
     }
   }
 
-  function mobileNavClick(e, elClass) {
-    console.log(e, elClass)
-  }
-
   return (
     <>
       <nav className="mobile-cal-menu">
@@ -101,7 +97,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-19"
               className={`mobile-cal-link ${highlightToday(19)}`}
-              onClick={e => mobileNavClick(e, "day-19")}
             >
               19
             </a>
@@ -110,7 +105,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-20"
               className={`mobile-cal-link ${highlightToday(20)} `}
-              onClick={mobileNavClick}
             >
               20
             </a>
@@ -119,7 +113,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-21"
               className={`mobile-cal-link ${highlightToday(21)} `}
-              onClick={mobileNavClick}
             >
               21
             </a>
@@ -128,7 +121,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-22"
               className={`mobile-cal-link ${highlightToday(22)} `}
-              onClick={mobileNavClick}
             >
               22
             </a>
@@ -137,7 +129,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-23"
               className={`mobile-cal-link ${highlightToday(23)} `}
-              onClick={mobileNavClick}
             >
               23
             </a>
@@ -146,7 +137,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-24"
               className={`mobile-cal-link ${highlightToday(24)} `}
-              onClick={mobileNavClick}
             >
               24
             </a>
@@ -155,7 +145,6 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
             <a
               href="#day-25"
               className={`mobile-cal-link ${highlightToday(25)} `}
-              onClick={mobileNavClick}
             >
               25
             </a>
