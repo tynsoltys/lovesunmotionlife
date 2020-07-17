@@ -34,7 +34,7 @@ export default function EventPage({ data }) {
     })
 
   const showFiles = texts => {
-    console.log(texts)
+    // console.log(texts)
     if (texts === null) {
       return false
     } else if (texts[0].religious_file === null) {
@@ -46,7 +46,7 @@ export default function EventPage({ data }) {
     }
   }
 
-  console.log(showFiles(sacred_texts))
+  // console.log(showFiles(sacred_texts))
 
   const linksArray = () =>
     sacred_texts.map(i => {
