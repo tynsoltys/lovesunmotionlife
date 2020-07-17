@@ -9,8 +9,8 @@ import IconBackArrow from "../components/icons/IconBackArrow"
 import IconCalendar from "../components/icons/IconCalendar"
 
 const Header = ({ ulad, pageType, uladName }) => {
-  console.log(`huhuhuh`, uladName)
-  console.log(pageType)
+  // console.log(`huhuhuh`, uladName)
+  // console.log(pageType)
 
   let backPage = "faq"
   const showToggle = () => {
@@ -27,8 +27,8 @@ const Header = ({ ulad, pageType, uladName }) => {
       return true
     }
   }
-  console.log("BACKPAGE", backPage)
-  console.log(showToggle())
+  // console.log("BACKPAGE", backPage)
+  // console.log(showToggle())
 
   return (
     <header className="">

@@ -3,8 +3,8 @@ import { Markup } from "interweave"
 import { catTranslate } from "../utils/uladConverters"
 
 const TochkaGrid = ({ ulad, tochky, file }) => {
-  console.log(ulad)
-  console.log(tochky)
+  // console.log(ulad)
+  // console.log(tochky)
   function liConstructor(tochkaCode) {
     // console.log(`TOCHKA CODE`, tochkaCode)
     const tochkaUrl = `${ulad}-${tochkaCode}`
@@ -20,7 +20,7 @@ const TochkaGrid = ({ ulad, tochky, file }) => {
       activity_subtitle,
       has_event,
     } = tochkaNode[0].node
-    console.log(activity_code, has_event)
+    // console.log(activity_code, has_event)
 
     const hasEventRender = has_event => {
       if (has_event === true) {

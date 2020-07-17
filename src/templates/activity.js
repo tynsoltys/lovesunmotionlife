@@ -14,7 +14,7 @@ export default function ActivityPage({ data }) {
     return null
   }
   const activity = prismicContent.node
-  console.log(data)
+  // console.log(data)
   const {
     activity_category,
     activity_code,
@@ -29,7 +29,7 @@ export default function ActivityPage({ data }) {
     ulad,
     znymka,
   } = activity
-  console.log(activity)
+  // console.log(activity)
 
   function catTranslate(category) {
     let categoryEn = ""
@@ -60,11 +60,11 @@ export default function ActivityPage({ data }) {
       return `<li>${i.text}</li>`
     })
 
-  console.log(helpful_links)
+  // console.log(helpful_links)
 
   const linksArray = () =>
     helpful_links.map(i => {
-      console.log(i)
+      // console.log(i)
       const { helpful_link_title, helpful_link_description, helpful_link } = i
       // console.log(helpful_link_title[0].text)
       return `<li className="btn"><a href="${helpful_link.url}" target="_blank">${helpful_link_title[0].text}</a></li>`

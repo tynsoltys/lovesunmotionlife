@@ -12,7 +12,7 @@ export default function ZustrichPage({ data }) {
 
   const ZustrichPage = prismicContent.node
   const { ulad } = ZustrichPage
-  console.log(ulad)
+  // console.log(ulad)
 
   const upnEvents = data.prismic.upnEvents.edges
   const upuEvents = data.prismic.upuEvents.edges

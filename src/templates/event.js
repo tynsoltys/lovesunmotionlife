@@ -11,7 +11,7 @@ export default function EventPage({ data }) {
     return null
   }
   const event = prismicContent.node
-  console.log(data)
+  // console.log(data)
   const {
     activity_category,
     activity_description,
@@ -29,16 +29,33 @@ export default function EventPage({ data }) {
 
   const materialsList = () =>
     materials.map(i => {
-      console.log(i)
-      // return `<li>${i.text}</li>`
+      // console.log(i)
+      return `<li>${i.text}</li>`
     })
+
+  const showFiles = texts => {
+    console.log(texts)
+    if (texts === null) {
+      return false
+    } else if (texts[0].religious_file === null) {
+      return false
+    } else if (texts[0] === undefined) {
+      return false
+    } else {
+      return true
+    }
+  }
+
+  console.log(showFiles(sacred_texts))
 
   const linksArray = () =>
     sacred_texts.map(i => {
-      console.log(i)
+      // console.log(i)
       const { religious_file, button_text } = i
-      // console.log(helpful_link_title[0].text)
-      return `<li className="btn"><a class="btn bg-orange-500 ml-0" href="${religious_file.url}" target="_blank">${button_text[0].text}</a></li>`
+
+      return `<li className="btn"><a class="btn bg-orange-500 ml-0" href="${
+        religious_file.url !== null ? religious_file.url : ""
+      }" target="_blank">${button_text[0].text}</a></li>`
     })
 
   const linksList = () => linksArray().join("")
@@ -49,7 +66,6 @@ export default function EventPage({ data }) {
         className={`font-sans h-full
         w-full ${catTranslate(activity_category)}-activity activity-container`}
       >
-        {/* {materials === null ? "no materials" : "materials exist"} */}
         <div className="top-section flex w-full">
           <section className="intro w-full">
             <div className="intro-text">
@@ -80,13 +96,13 @@ export default function EventPage({ data }) {
           </section>
         </div>
         <div className="middle-section flex-wrap">
-          {materials != false ? (
+          {materials !== null ? (
             <section className="materials">
               <h3>Мaтеріяли</h3>
               {RichText.render(materials)}
             </section>
           ) : (
-            "no materials"
+            ""
           )}
           {youtube_video_id !== null ? (
             <section className="video-box">
@@ -107,7 +123,7 @@ export default function EventPage({ data }) {
             ""
           )}
         </div>
-        {sacred_texts[0].religious_file !== null ? (
+        {showFiles(sacred_texts) == true ? (
           <div className="bottom-section">
             <section className="helpful-files">
               <h3>Додaтки</h3>

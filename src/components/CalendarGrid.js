@@ -5,15 +5,15 @@ import moment from "moment-timezone"
 import { catTranslate } from "../utils/uladConverters"
 
 const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
-  console.log(ulad, upnEvents, upuEvents)
+  // console.log(ulad, upnEvents, upuEvents)
 
   function eventConstructor(eventCode, eventUlad) {
-    console.log(`TOCHKA CODE`, eventCode, eventUlad)
+    // console.log(`TOCHKA CODE`, eventCode, eventUlad)
     const eventUrl = `${eventUlad}_${eventCode}`
-    console.log(eventUrl)
+    // console.log(eventUrl)
 
     const eventSet = u => {
-      console.log(u)
+      // console.log(u)
       if (u === "upn") {
         return upnEvents
       } else {
@@ -27,7 +27,7 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
       // console.log(i.node._meta.uid)
       return i.node._meta.uid === eventUrl
     })
-    console.log(eventNode[0].node)
+    // console.log(eventNode[0].node)
     const {
       activity_title,
       activity_subtitle,
@@ -79,11 +79,11 @@ const CalendarGrid = ({ ulad, upuEvents, upnEvents }) => {
 
   const today = new Date()
   const dateNumber = today.getDate()
-  console.log(dateNumber)
+  // console.log(dateNumber)
 
   const highlightToday = dateValue => {
     if (dateValue === dateNumber) {
-      console.log(dateValue, dateNumber)
+      // console.log(dateValue, dateNumber)
       return `today`
     } else {
       return ` `
