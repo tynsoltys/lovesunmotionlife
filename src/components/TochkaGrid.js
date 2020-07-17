@@ -1,7 +1,6 @@
-import React, { Component } from "react"
-import { Link } from "gatsby"
+import React from "react"
 import { Markup } from "interweave"
-import IconTriangle from "./icons/IconTriangle"
+import { catTranslate } from "../utils/uladConverters"
 
 const TochkaGrid = ({ ulad, tochky, file }) => {
   console.log(ulad)
@@ -22,26 +21,7 @@ const TochkaGrid = ({ ulad, tochky, file }) => {
       has_event,
     } = tochkaNode[0].node
     console.log(activity_code, has_event)
-    function catTranslate(category) {
-      let categoryEn = ""
-      switch (category) {
-        case "Любимо":
-          categoryEn = "love"
-          break
-        case "Сонце":
-          categoryEn = "sun"
-          break
-        case "Рух":
-          categoryEn = "motion"
-          break
-        case "Життя":
-          categoryEn = "zife"
-          break
-        default:
-          categoryEn = "oops"
-      }
-      return categoryEn
-    }
+
     const hasEventRender = has_event => {
       if (has_event === true) {
         return `<div class="has-event-true"></div>`

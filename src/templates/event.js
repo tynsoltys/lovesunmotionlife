@@ -21,34 +21,35 @@ export default function EventPage({ data }) {
     event_information,
     event_znymka,
     has_tochka,
-    hutirka_video_link,
+    youtube_video_id,
     materials,
     ulad,
+    sacred_texts,
   } = event
-  console.log(event)
 
   const materialsList = () =>
     materials.map(i => {
-      console.log(i.text)
-      return `<li>${i.text}</li>`
+      console.log(i)
+      // return `<li>${i.text}</li>`
     })
 
-  // const linksArray = () =>
-  //   helpful_links.map(i => {
-  //     console.log(i)
-  //     const { helpful_link_title, helpful_link_description, helpful_link } = i
-  //     // console.log(helpful_link_title[0].text)
-  //     return `<li className="btn"><a href="${helpful_link.url}" target="_blank">${helpful_link_title[0].text}</a></li>`
-  //   })
+  const linksArray = () =>
+    sacred_texts.map(i => {
+      console.log(i)
+      const { religious_file, button_text } = i
+      // console.log(helpful_link_title[0].text)
+      return `<li className="btn"><a class="btn bg-orange-500 ml-0" href="${religious_file.url}" target="_blank">${button_text[0].text}</a></li>`
+    })
 
-  // const linksList = () => linksArray().join("")
+  const linksList = () => linksArray().join("")
 
   return (
     <Layout ulad={ulad} pageType="event">
       <div
         className={`font-sans h-full
-        w-full activity-container`}
+        w-full ${catTranslate(activity_category)}-activity activity-container`}
       >
+        {/* {materials === null ? "no materials" : "materials exist"} */}
         <div className="top-section flex w-full">
           <section className="intro w-full">
             <div className="intro-text">
@@ -63,7 +64,7 @@ export default function EventPage({ data }) {
               <hr />
               {activity_description !== null ? (
                 <p className="activity_description">
-                  {activity_description[0].text}
+                  {RichText.render(activity_description)}
                 </p>
               ) : (
                 ""
@@ -79,15 +80,43 @@ export default function EventPage({ data }) {
           </section>
         </div>
         <div className="middle-section flex-wrap">
-          {materials !== null ? (
+          {materials != false ? (
             <section className="materials">
               <h3>Мaтеріяли</h3>
               {RichText.render(materials)}
             </section>
           ) : (
+            "no materials"
+          )}
+          {youtube_video_id !== null ? (
+            <section className="video-box">
+              <h3>Відео</h3>
+              <div className="embed-container">
+                <iframe
+                  src={`https://www.youtube.com/embed/${youtube_video_id[0].text.substr(
+                    0,
+                    11
+                  )}`}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </section>
+          ) : (
             ""
           )}
         </div>
+        {sacred_texts[0].religious_file !== null ? (
+          <div className="bottom-section">
+            <section className="helpful-files">
+              <h3>Додaтки</h3>
+              <Markup containerTagName={`ul`} content={linksList()} />
+            </section>
+          </div>
+        ) : (
+          ""
+        )}
 
         <hr class="major-hr" />
       </div>
@@ -101,6 +130,8 @@ export const query = graphql`
       allEvents(uid: $uid) {
         edges {
           node {
+            activity_category
+            youtube_video_id
             activity_description
             activity_subtitle
             activity_title
@@ -113,6 +144,16 @@ export const query = graphql`
             _linkType
             _meta {
               uid
+            }
+            sacred_texts {
+              religious_file {
+                _linkType
+                ... on PRISMIC__FileLink {
+                  _linkType
+                  url
+                }
+              }
+              button_text
             }
           }
         }

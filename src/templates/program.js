@@ -55,6 +55,7 @@ export const query = graphql`
             activity_subtitle
             has_tochka
             ulad
+            activity_category
           }
         }
       }
@@ -70,6 +71,7 @@ export const query = graphql`
             activity_subtitle
             has_tochka
             ulad
+            activity_category
           }
         }
       }

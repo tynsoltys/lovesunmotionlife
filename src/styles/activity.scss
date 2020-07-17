@@ -113,6 +113,9 @@
     @apply p-8;
     @apply shadow-lg;
     margin: 10px;
+    @media (max-width: 800px) {
+      @apply p-6;
+    }
   }
   section.intro {
     display: flex;
@@ -144,6 +147,7 @@
     @media (max-width: 800px) {
       section.materials,
       section.examples {
+        max-width: calc(100% - 20px);
       }
     }
   }
@@ -157,7 +161,8 @@
       font-style: italic;
     }
   }
-  section.examples {
+  section.examples,
+  section.video-box {
     flex: 1 0 550px;
     // width: calc(70% - 40px);
     ul {

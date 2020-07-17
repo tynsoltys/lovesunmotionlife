@@ -1,13 +1,23 @@
 import React from "react"
-
+import LogoFancy from "../components/LogoFancy"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Link } from "gatsby"
 
 const NotFoundPage = () => (
   <Layout pageType="404">
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="404-container text-center flex flex-col justify-center content-center">
+      <div className="logo logo-container">
+        <Link to="/" className="logo ">
+          <LogoFancy />
+          <div className="mt-8">
+            <h3>Нa жaль, тут немa тісточок.</h3>
+            <p>
+              Але, є <strong>404</strong> комaрів.
+            </p>
+          </div>
+        </Link>
+      </div>
+    </div>
   </Layout>
 )
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Link, RichText, Date } from "prismic-reactjs"
+import { RichText } from "prismic-reactjs"
 import { Markup } from "interweave"
 // import { linkResolver } from "gatsby-source-prismic-graphql"
 // import { uladification } from "../utils/uladConverters"
@@ -91,7 +91,7 @@ export default function ActivityPage({ data }) {
               </h1>
               <h3 className="activity_subtitle">{activity_subtitle[0].text}</h3>{" "}
               <hr />
-              <p>{activity_description[0].text}</p>
+              {RichText.render(activity_description)}
             </div>
             {znymka !== null ? (
               <div className="znymka-container">
